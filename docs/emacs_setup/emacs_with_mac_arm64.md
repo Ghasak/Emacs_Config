@@ -131,4 +131,19 @@ under the terms of the GNU General Public License.
 For more information about these matters, see the file named COPYING.
 ```
 
+## Prerequests to be installed
+Read the section about `macOS` to install the `emacs` with extra options/features.
+- [Prerequisites](https://github.com/syl20bnr/spacemacs)
 
+- Requirements for python
+  - [About importmagic and epc](https://stackoverflow.com/questions/49065606/how-to-fix-spacemacs-importmagic-and-or-epc-not-found)
+```shell
+pip3 install importmagic epc
+pip3 install debugpy
+```
+
+## Tutorials and channels
+- Jack of Some's Spacemacs tutorial videos. [here](https://www.youtube.com/watch?v=r-BHx7VNX5s&list=PLd_Oyt6lAQ8Rxb0HUnGbRrn6R4Cdt2yoI)
+- GDQuest's Game Design oriented tutorials to Spacemacs.[here](https://www.youtube.com/watch?v=hCNOB5jjtmc&list=PLhqJJNjsQ7KFkMVBunWWzFD8SlH714qm4)
+- Practicalli's Clojure tutorials based on Spacemacs [here](https://www.youtube.com/watch?v=jMJ58Gcc1RI&list=PLpr9V-R8ZxiCHMl2_dn1Fovcd34Oz45su).
+- Eivind Fonn's classic Spacemacs ABC [here](https://www.youtube.com/watch?v=ZFV5EqpZ6_s&list=PLrJ2YN5y27KLhd3yNs2dR8_inqtEiEweE).

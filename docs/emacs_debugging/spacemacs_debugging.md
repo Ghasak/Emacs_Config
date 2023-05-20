@@ -102,6 +102,7 @@ ln -s /Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi /usr/local/bin/
 ```
 
 ## Debugging for Python
+To be written later (Now I am using python `debugpy` which works very fine!).
 
 
 
@@ -114,3 +115,4 @@ ln -s /Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi /usr/local/bin/
 - [python layer](https://develop.spacemacs.org/layers/+lang/python/README.html)
 - [Debuging codelldb manual](https://github.com/vadimcn/codelldb/blob/master/MANUAL.md)
 - [dap-codelldb](https://github.com/emacs-lsp/dap-mode/blob/master/dap-codelldb.el)
+- [Emacs Debug with GDB](https://www.youtube.com/watch?v=X70OjYLUpEk&t=455s)

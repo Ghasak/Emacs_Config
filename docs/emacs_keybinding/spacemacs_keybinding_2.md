@@ -1,4 +1,4 @@
-SPC s c remove highlight
+# SPC s c remove highlight
 
 **** Files manipulations key bindings
 Files manipulation commands (start with ~f~):

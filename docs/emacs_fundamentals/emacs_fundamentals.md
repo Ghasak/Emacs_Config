@@ -1,49 +1,59 @@
 # EMACS BASIC CONFIGURATIONS
 
 ## CONCEPTS
-The following configurations for my `Emacs` are based on `spacemecas` configurations. Now, everything works flawlessly. 
+The following configurations for my `Emacs` are based on `spacemecas` configurations. Now, everything works flawlessly.
 
 ## Configurations with SpaceEmacs
 Here is the list of things that I change
 
 - Working with lisp files (barfage, slurpage, & more)
 
-```emacs-lisp
-Key Binding	Description
-SPC m g g	go to definition of symbol under point
-SPC m h h	describe symbol at point
-SPC m c c	byte compile the current file
-SPC m c l	popup compile-log buffer
-SPC m e $ or SPC m e l	go to end of current line and evaluate
-SPC m e b	evaluate current buffer
-SPC m e c	evaluate current form (start with defun, setq, etc…)
-SPC m e e	evaluate sexp before point
-SPC m e r	evaluate current region
-SPC m e f	evaluation current function
-SPC m       toggle lisp state
-SPC m t b	run tests of current buffer
-SPC m t q	run ert
-SPC m d m	open macrostep transient-state
-```
+| Key       | Binding                                                | Description |
+|-----------|--------------------------------------------------------|-------------|
+| SPC m g g | go to definition of symbol under point                 |             |
+| SPC m h h | describe symbol at point                               |             |
+| SPC m c c | byte compile the current file                          |             |
+| SPC m c l | popup compile-log buffer                               |             |
+| SPC m e $ | or SPC m e l	go to end of current line and evaluate   |             |
+| SPC m e b | evaluate current buffer                                |             |
+| SPC m e c | evaluate current form (start with defun, setq, etc…)   |             |
+| SPC m e e | evaluate sexp before point                             |             |
+| SPC m e r | evaluate current region                                |             |
+| SPC m e f | evaluation current function                            |             |
+| SPC m     | toggle lisp state                                      |             |
+| SPC m t b | run tests of current buffer                            |             |
+| SPC m t q | run ert                                                |             |
+| SPC m d m | open macrostep transient-state                         |             |
+
 - [emacs-lisp](https://www.spacemacs.org/layers/+lang/emacs-lisp/README.html)
 
 
 ## Keybinding I use
 
-| Key binding                | Description                                               |
-| -------------              | --------------------------------------------------------- |
-| `<leader>w hjkl`           | Moving between buffers                                    |
-| `<leader>bp`               | buffer previous                                           |
-| `<leader>bn`               | buffer next                                               |
-| `<leader>bn`               | buffer next                                               |
-| package-show-list-packages | `space`, `space` then write this command                  |
-| `<leader>m`                | for any LSP (you can use also `,`)                        |
-| `helm-find-file`           | for finding file in tree                                  |
-| customize-create-theme     | Creating a color theme                                    |
-| `<leader>saf`              | To open Ag to find file                                   |
-| `<leader>sd`-B2 -A2 keyword| Find the correct keyword among many files in directory    |
-| `::lsp-ui-imenu`           | Will show object tree for the LSP                         |
-| `<leader>fed`              | Will open SpaceEmacs buffer quickly (shortcut)            |
+| Key binding                 | Description                                                       |
+|-----------------------------|-------------------------------------------------------------------|
+| `<leader>w hjkl`            | Moving between buffers                                            |
+| `<leader>bp`                | buffer previous                                                   |
+| `<leader>bn`                | buffer next                                                       |
+| `<leader>bn`                | buffer next                                                       |
+| package-show-list-packages  | `space`, `space` then write this command                          |
+| `<leader>m`                 | for any LSP (you can use also `,`)                                |
+| `helm-find-file`            | for finding file in tree                                          |
+| customize-create-theme      | Creating a color theme                                            |
+| `<leader>saf`               | To open Ag to find file                                           |
+| `<leader>sd`-B2 -A2 keyword | Find the correct keyword among many files in directory            |
+| `::lsp-ui-imenu`            | Will show object tree for the LSP                                 |
+| `<leader>fed`               | Will open SpaceEmacs buffer quickly (shortcut)                    |
+| `<leader>fj`                | in any buffer you back to origin of where is the file in dried    |
+| `<leadr>fy`                 | This will allow to copy the file name or other features           |
+| `<leader>a u`               | undo-tree toggle                                                  |
+| `<leader>w m`               | buffer maximized                                                  |
+| `<leader>x`                 | So many features you can find such as c for count buffer elements |
+| `<leader>xgt`               | google translate for selected words in visual mode                |
+| `gt and gT`                 | with `tabs` it allows to move between tabs                        |
+| `<leader>t`                 | many functionality                                                |
+| `<leader>a w /`             | to search in google search engine                                 |
+|                             |                                                                   |
 
 
 
