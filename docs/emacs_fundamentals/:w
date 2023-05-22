@@ -1,0 +1,112 @@
+# How to use Emacs Dired
+The following documentation will teach us all what we need to know about `emacs
+dired`
+
+## File Operations
+These are my frequently usage for my workflow with `dired` on file operations.
+
+### Marking files
+
+| keybinding | Description                                                                            |
+|------------|----------------------------------------------------------------------------------------|
+| Type u     | to Unmark a file or all files of an inserted subdirectory.                             |
+| Type DEL   | to back up one line and unmark or unflag.                                              |
+| Type x     | to delete (eXpunge) the files flagged ‘D’.                                             |
+| Type RET   | to Find the current line’s file (or dired it in another buffer, if it is a directory). |
+| Type o     | to find file or Dired directory in Other window.                                       |
+| Type i     | to Insert a subdirectory in this buffer.                                               |
+| Type R     | to Rename a file or move the marked files to another directory.                        |
+| Type C     | to Copy files.                                                                         |
+| Type s     | to toggle Sorting by name/date or change the ‘ls’ switches.                            |
+| Type g     | to read all currently expanded directories again.                                      |
+
+- The ones that I used frequently.
+
+| Keybinding            | Description                                                                |
+|-----------------------|----------------------------------------------------------------------------|
+| `m/u`                 | mark and unmark selected directories/files                                 |
+| `U`                   | unmark all files in buffer                                                |
+| `*t/t`                | Inverts makred files in buffer                                             |
+| `* %`                 | Mark files in buffer using regular expression                             |
+| `*`                   | Lots of other auto-marking functions                                       |
+| `k/K`                 | `Kill` marked items (refresh buffer with g/g r to get them back)           |
+| `m`                   | Many operations can be done on a single file if there are no active marks! |
+|                       |                                                                            |
+
+- `K` will not delete directories or files, it will just remove them from the
+  view in the buffer.
+- Select then `shift-k`  Searching manual,
+
+### Sorting directories & files
+I use `describe mode` or `m<F1>` to then search for `dired` to know all the
+keybindings.
+
+### Copying and Renaming files
+
+| Keybinding | Command                  | description                                                     |
+|------------|--------------------------|-----------------------------------------------------------------|
+| `C`        | `dired-do-copy`          | Copy makred files (or if no files are marked, the current file) |
+|            |                          | Copying single and multiple files                               |
+| `c`        | `dired-do-compress`      | Compress a file/directory                                       |
+| `U`        | `dired-unmark-all-marks` | Unmark all files in buffer                                      |
+| `R`        | `dired-do-rename`        | Rename based on regular expression: `^test, old-\&`             |
+|            |                          | Some can be used for moving file                                |
+|            |                          |                                                                 |
+
+- In the `dired-do-copy` for multiple files, the destination directory must be created a head.
+- In the `C` (`copying`) once you use the `C` a buffer will be opened to ask you
+  to the new name for the file you have copied (should not be same name of
+  course).
+- You can apply `m/u` to mark several files and it will ask you to which
+  directory you want to copy the marked files.
+- `ctrl-alt-j` will allow you to write a name for a file without getting the
+  auto-compilation in the way (`ivy-immediate-done` the one responsible on this)
+
+### Creating and extracting archives
+### Other common operations
+### Delete files/directories
+
+- Select the files/directories using `m/u` for mark and unmark them.
+- Then you can hit `d` for delete
+- I use `x` to confirm my deletions (be careful with this command, be sure what
+  you are doing)
+- `delete-by-moving-to-trash` - Move to trash instead of deleting permanently.
+
+### Edit file name in dired - Part I
+In `idred` file manager, I use the original emacs method for edit file names using the following
+
+1. While you are in the `dired` mode. with all the files that you want to
+   change.
+2. Enter to the dired writing mode, using:
+- Vanilla Emacs: `C-x` then `C-q` (as Ctrl + x then Ctrl + q) will activate the
+  `wdired-change-to-wdired-mode`
+- Spacemacs method: Edit the buffer using `<leader> b w` as for `buffer` ->
+  `write` to activate` `wdired-change-to-wdired-mode`
+
+3. Edit the file names listing as if it were a normal buffer (you still can use
+   the Evil mode)
+4. Finish editiing (`wdired-finish-edit`): `C-x` then `C-s` or `C-c` and `C-c**
+
+**Note**
+- `C`   -> `Ctrl`
+- `M`   -> `Meta/alt`
+- `SPC` -> `<leadre>/Space`
+- `RET` -> `return`
+
+### Rename multiple files - Part II
+This can easily be done using dired:
+1. Enter a dired view of your directory
+2. Switch to writable dired mode (wdired-change-to-wdired-mode): C-xC-q
+3. Edit the file names listing as if it were a normal buffer (for example using
+   a keyboard macro or a rectangular selection or query-replace). Here is a
+   regexp-based solution: `C-M-%\(VAR.\)_\(..\)RET\2_\1RET`
+4. Finish editing (wdired-finish-edit): C-xC-s or C-c
+
+## Single Dired buffer
+## File icons
+## Open external files
+## Hide/show dotfiles
+
+## Reference
+- [Emacs Dired rename many files](https://stackoverflow.com/questions/15881776/emacs-dired-rename-many-files)
+- [dired-rename-multiple files](https://pragmaticemacs.wordpress.com/2015/05/26/dired-rename-multiple-files/)

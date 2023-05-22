@@ -1,13 +1,49 @@
 # EMACS BASIC CONFIGURATIONS
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [EMACS BASIC CONFIGURATIONS](#emacs-basic-configurations)
+    - [CONCEPTS](#concepts)
+    - [Quick way to navigate between buffers](#quick-way-to-navigate-between-buffers)
+    - [Tips and Tricks](#tips-and-tricks)
+    - [Configurations with SpaceEmacs](#configurations-with-spaceemacs)
+    - [Keybinding I use](#keybinding-i-use)
+    - [How to use the LSP](#how-to-use-the-lsp)
+    - [Pacakges to be installed](#pacakges-to-be-installed)
+    - [Types of shells in Emacs](#types-of-shells-in-emacs)
+    - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
+    - [Language servers  and layers](#language-servers--and-layers)
+    - [Selected themes](#selected-themes)
+    - [Fonts Configurations](#fonts-configurations)
+    - [Other configurations](#other-configurations)
+    - [User configurations](#user-configurations)
+    - [From Scratch](#from-scratch)
+    - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
+
+<!-- markdown-toc end -->
+
+
 
 ## CONCEPTS
-The following configurations for my `Emacs` are based on `spacemecas` configurations. Now, everything works flawlessly.
+The following configurations for my `Emacs` are based on `spacemecas`
+configurations. Now, everything works flawlessly.
+
+## Quick way to navigate between buffers
+| keybinding          | Description                                                                                                                                                                           |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| SPC TAB or SPC b b: | This keybinding shows a list of open buffers in the current frame. You can navigate through the list using the arrow keys and press RET (Enter) to switch to the selected buffer.     |
+| SPC b n or SPC b p: | These keybindings allow you to cycle forward (SPC b n) or backward (SPC b p) through the open buffers. Press the respective keybinding multiple times to switch to different buffers. |
+| SPC b 0 to SPC b 9: | These keybindings allow you to quickly switch to buffers numbered from 0 to 9. For example, pressing SPC b 1 will switch to the first buffer in the buffer list.                      |
+| SPC b d           : | This keybinding shows a list of recently visited buffers. You can navigate through the list using the arrow keys and press RET (Enter) to switch to the selected buffer.              |
+
+## Tips and Tricks
+- You can use either `\`` or `'` to repeat last command you used in your given buffer.
 
 ## Configurations with SpaceEmacs
 Here is the list of things that I change
 
 - Working with lisp files (barfage, slurpage, & more)
-
+'
 | Key       | Binding                                                | Description |
 |-----------|--------------------------------------------------------|-------------|
 | SPC m g g | go to definition of symbol under point                 |             |
@@ -30,33 +66,37 @@ Here is the list of things that I change
 
 ## Keybinding I use
 
-| Key binding                 | Description                                                       |
-|-----------------------------|-------------------------------------------------------------------|
-| `<leader>w hjkl`            | Moving between buffers                                            |
-| `<leader>bp`                | buffer previous                                                   |
-| `<leader>bn`                | buffer next                                                       |
-| `<leader>bn`                | buffer next                                                       |
-| package-show-list-packages  | `space`, `space` then write this command                          |
-| `<leader>m`                 | for any LSP (you can use also `,`)                                |
-| `helm-find-file`            | for finding file in tree                                          |
-| customize-create-theme      | Creating a color theme                                            |
-| `<leader>saf`               | To open Ag to find file                                           |
-| `<leader>sd`-B2 -A2 keyword | Find the correct keyword among many files in directory            |
-| `::lsp-ui-imenu`            | Will show object tree for the LSP                                 |
-| `<leader>fed`               | Will open SpaceEmacs buffer quickly (shortcut)                    |
-| `<leader>fj`                | in any buffer you back to origin of where is the file in dried    |
-| `<leadr>fy`                 | This will allow to copy the file name or other features           |
-| `<leader>a u`               | undo-tree toggle                                                  |
-| `<leader>w m`               | buffer maximized                                                  |
-| `<leader>x`                 | So many features you can find such as c for count buffer elements |
-| `<leader>xgt`               | google translate for selected words in visual mode                |
-| `gt and gT`                 | with `tabs` it allows to move between tabs                        |
-| `<leader>t`                 | many functionality                                                |
-| `<leader>a w /`             | to search in google search engine                                 |
-|                             |                                                                   |
-
-
-
+| Key binding                    | Description                                                       |
+|--------------------------------|-------------------------------------------------------------------|
+| `<leader>w hjkl`               | Moving between buffers                                            |
+| `<leader>bp`                   | buffer previous                                                   |
+| `<leader>bn`                   | buffer next                                                       |
+| `<leader>bn`                   | buffer next                                                       |
+| package-show-list-packages     | `space`, `space` then write this command                          |
+| `<leader>m`                    | for any LSP (you can use also `,`)                                |
+| `helm-find-file`               | for finding file in tree                                          |
+| customize-create-theme         | Creating a color theme                                            |
+| `<leader>saf`                  | To open Ag to find file                                           |
+| `<leader>sd`-B2 -A2 keyword    | Find the correct keyword among many files in directory            |
+| `::lsp-ui-imenu`               | Will show object tree for the LSP                                 |
+| `<leader>fed`                  | Will open SpaceEmacs buffer quickly (shortcut)                    |
+| `<leader>fj`                   | in any buffer you back to origin of where is the file in dried    |
+| `<leadr>fy`                    | This will allow to copy the file name or other features           |
+| `<leader>a u`                  | undo-tree toggle                                                  |
+| `<leader>w m`                  | buffer maximized                                                  |
+| `<leader>x`                    | So many features you can find such as c for count buffer elements |
+| `<leader>xgt`                  | google translate for selected words in visual mode                |
+| `gt and gT`                    | with `tabs` it allows to move between tabs                        |
+| `<leader>t`                    | many functionality                                                |
+| `<leader>a w /`                | to search in google search engine                                 |
+| mini-map-mode                  | to toggle the minimap mode                                        |
+| M-:`markdown-toc-generate-toc` | this will allow you to generate table of content                  |
+| `help-xref-interned`           | offer help on certain function or command in emacs                |
+| `describe-mode`                | describe with help for a given mode                               |
+| `describe-key`                 | describe a keybinding                                             |
+| `describe-face`                | about the theme/colors in `emacs`                                 |
+| `Rainbow Mode`                 | Activate the colors in the buffer base don the `color` layer      |
+|                                |                                                                   |
 
 ## How to use the LSP
 After accessing the `lsp` for the specialized programming language, you can use
@@ -258,31 +298,20 @@ before packages are loaded."
 )
 
 ```
-
-
 ## From Scratch
 I followed the configurations mentioned in the following thread
 - [Emacs from Scratch](https://github.com/daviwil/emacs-from-scratch/blob/3075158cae210060888001c0d76a58a4178f6a00/init.el)
 
-
 ## Configurations wiht DOOM Emacs
-
-```yaml
 But before you doom yourself, here are some things you should know:
-
 1. Do not forget to run 'doom sync', then restart Emacs, after modifying init.el
    or packages.el in ~/.config/doom.
-
    This command ensures needed packages are installed, orphaned packages are
    removed, and your autoloads/cache files are up to date. When in doubt, run
    'doom sync'!
-
 2. If something goes wrong, run `doom doctor`. It diagnoses common issues with
    your environment and setup, and may offer clues about what is wrong.
-
 3. Use 'doom upgrade' to update Doom. Doing it any other way will require
    additional steps. Run 'doom help upgrade' to understand those extra steps.
-
 4. Access Doom's documentation from within Emacs via 'SPC h d h' or 'C-h d h'
    (or 'M-x doom/help')
-```

@@ -13,6 +13,5 @@
 - [Python](https://develop.spacemacs.org/layers/+lang/python/README.html#backends)
 ## Rust layer
 - [Rust layer](https://develop.spacemacs.org/layers/+lang/rust/README.html#debugger)
-
 ## Eaf layer
 - [eaf layer](https://develop.spacemacs.org/layers/+tools/eaf/README.html)

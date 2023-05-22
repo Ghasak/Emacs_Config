@@ -30,4 +30,4 @@ the `cig` will allow you to change instance and skip the one you don't need.
 ## References
 - About `iedit` mode
   - [Reference_1](https://emacs.stackexchange.com/questions/13466/how-to-replace-words-in-a-region-using-iedit)
-  - [Reference_2 ](https://www.youtube.com/watch?v=SaOyV0d9WBc&list=WL&index=8)
+  - [Reference_2](https://www.youtube.com/watch?v=SaOyV0d9WBc&list=WL&index=8)

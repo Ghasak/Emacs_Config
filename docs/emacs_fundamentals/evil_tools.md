@@ -26,6 +26,14 @@ Most of these packages are already included in `spacemacs`.
 | evil-matchit             | Press “%” to jump between matched tags (“<div>” and “</div>” in html, etc).                                                              |
 |                          |                                                                                                                                          |
 
+## Useful Evil-owl
+This package offer to show the register and all the entires.
+- You need to toggle the `evil-owl-mode` first to make it works.
+  -  evil-owl-mode
+- Press q, @, ​"​, C-r, m, ​'​, or ` to view the popup, press C-f or C-b to scroll
+  it, and input a register or mark to make the popup disappear.
+
+
 
 ## Alter behavior of evil
 I use the following steps
@@ -39,7 +47,6 @@ You can add this before  `package-selected-packages` manually.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol t)
  '(package-selected-packages
-
 ```
 ## Reference
 - [Practicalli Spacemacs](https://practical.li/spacemacs/spacemacs-basics/evil-tools/#todoexpand-on-overview-provide-video-overview)
