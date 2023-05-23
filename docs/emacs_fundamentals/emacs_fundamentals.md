@@ -15,14 +15,12 @@
     - [Language servers  and layers](#language-servers--and-layers)
     - [Selected themes](#selected-themes)
     - [Fonts Configurations](#fonts-configurations)
-    - [Other configurations](#other-configurations)
+      - [Other configurations](#other-configurations)
     - [User configurations](#user-configurations)
     - [From Scratch](#from-scratch)
     - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
 
 <!-- markdown-toc end -->
-
-
 
 ## CONCEPTS
 The following configurations for my `Emacs` are based on `spacemecas`
@@ -314,4 +312,4 @@ But before you doom yourself, here are some things you should know:
 3. Use 'doom upgrade' to update Doom. Doing it any other way will require
    additional steps. Run 'doom help upgrade' to understand those extra steps.
 4. Access Doom's documentation from within Emacs via 'SPC h d h' or 'C-h d h'
-   (or 'M-x doom/help')
+    (or 'M-x doom/help')

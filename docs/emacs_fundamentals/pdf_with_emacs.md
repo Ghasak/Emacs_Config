@@ -19,7 +19,8 @@ As you already open a pdf in `spacmacs` you can
 | `<leader>j`      | Jump option for pdf                                                                                  |
 | `<leader>t`      |                                                                                                      |
 | `<leader>T`      |                                                                                                      |
-|  `<leader>`                |                                                                                                      |
+| `<leader>`       |                                                                                                      |
+|                  |                                                                                                      |
 ## How about searching
 This section is for searching for a `keyword` among several `pdf` at given
 direcotry.
