@@ -147,3 +147,6 @@ pip3 install debugpy
 - GDQuest's Game Design oriented tutorials to Spacemacs.[here](https://www.youtube.com/watch?v=hCNOB5jjtmc&list=PLhqJJNjsQ7KFkMVBunWWzFD8SlH714qm4)
 - Practicalli's Clojure tutorials based on Spacemacs [here](https://www.youtube.com/watch?v=jMJ58Gcc1RI&list=PLpr9V-R8ZxiCHMl2_dn1Fovcd34Oz45su).
 - Eivind Fonn's classic Spacemacs ABC [here](https://www.youtube.com/watch?v=ZFV5EqpZ6_s&list=PLrJ2YN5y27KLhd3yNs2dR8_inqtEiEweE).
+
+
+
