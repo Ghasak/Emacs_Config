@@ -1,4 +1,21 @@
 # How to install Emacs on Mac
+ <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [How to install Emacs on Mac](#how-to-install-emacs-on-mac)
+    - [Configurations](#configurations)
+        - [Requirements for full installation](#requirements-for-full-installation)
+            - [Generic](#generic)
+            - [LSP](#lsp)
+            - [Dap](#dap)
+    - [Other ways to install Emacs](#other-ways-to-install-emacs)
+        - [Using railwaycat/emacsmacport/ tab](#using-railwaycatemacsmacport-tab)
+            - [[working, but very slow] Using emacs-mac-spacemacs-icon (application based)](#working-but-very-slow-using-emacs-mac-spacemacs-icon-application-based)
+        - [[Not used anymore] Build with Emacs emacs-mac (terminal based tty)](#not-used-anymore-build-with-emacs-emacs-mac-terminal-based-tty)
+    - [Build From Source](#build-from-source)
+    - [References](#references)
+
+<!-- markdown-toc end -->
 
 ## Configurations
 The current Configurations that I am working on are based on the pre-built
@@ -212,5 +229,20 @@ Emacs mac port also available on MacPorts with name "emacs-mac-app" and "emacs-m
 ```
 ## Build From Source
 I will not mention this one here, hopeful to be investigated later in the
-future. Check [here](https://github.com/jimeh/build-emacs-for-macos)
+future. Check [here](https://github.com/jimeh/build-emacs-for-macos), or check [Here](https://emacs.stackexchange.com/questions/37240/how-install-emacs-26-or-whatever-latest-ver-on-mac)
 
+```bash
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+
+TAG="26"
+git clone --depth 1 --branch emacs-${TAG} git://git.savannah.gnu.org/emacs.git
+cd emacs
+make clean
+./autogen.sh
+./configure --without-compress-install --with-json --with-dbus --with-librsvg --with-imagemagick --with-mailutils
+```
+
+## References
+- [How to install Emacs Guide for macOS](https://sourabhbajaj.com/mac-setup/Emacs/)

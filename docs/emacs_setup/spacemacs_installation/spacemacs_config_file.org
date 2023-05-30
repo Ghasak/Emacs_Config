@@ -1,0 +1,78 @@
+* Spacemacs Config
+
+This is very amazing as you can see for current buffer
+Impossible to see this running in our current. =New characters=  added here ~wow~ this is not ~wow~. Can we add more. Now, we can creat as many articles that we like to make.
+
+** The folloign item
+show that I am working with my current subject
+*** I am working on the following file
+This is first time to check this working
+- this is first argument.
+  - This is the second argument
+    - This is the another
+** another point
+Advanced theory could make things are more advanced and working on the currernt optional original file that you have worked on before. This could opennn the door for many possibility for our curretn objective as you can see from this demonstration. How about that!
+  The another way to make things more clear is to get them as we expected from current objective as you can see from many persepective.
+
+***** another point [0/0][0%]
+Here I willl add more information for current objective you can see
+for current object you can see that you can write many things
+as you can see it here
+ This is to do text for current objective.
+ This is another way to do the same thing.
+ This is also another way to make things more advanced.
+
+***** TODO This is just a way to make it clear [3/5][60%]
+ this is first task as you can see
+ This is just another task to be rendered.
+ Another way to make things more clear.
+ Wow, could it be?
+
+
+** This is my current objective
+        Working on the right way to make things are more applicable.
+*** this is another way
+yes it works for the current as well
+****** This is a testing
+
+
+#+DOWNLOADED: file:/Users/gmbp/Desktop/Screenshot 2023-05-24 at 16.28.36.png @ 2023-05-26 19:08:06
+[[file:Spacemacs_Config/2023-05-26_19-08-06_Screenshot 2023-05-24 at 16.28.36.png]]
+
+
+** Testing for Code
+Now lets run and see if the coding is working as well
+
+ Testing file
+ This is another test
+
+  - This is item number 1
+  - This is item number 2
+  - This is item number 3
+  - This also another item here
+[[https://gist.github.com/safijari/d9b1ed8a3f4cd10e632e04353c6abdfe][Org-Mode-config]] testing for working with the current buffer
+[[~/Downloads/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f612f61362f4f72672d6d6f64652d756e69636f726e2e7376672f31363270782d4f72672d6d6f64652d756e69636f726e2e7376672e706e67.png][Random picture goes here]]
+
+
+#+caption: This is an image
+#+name: test_image
+[[~/Downloads/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f612f61362f4f72672d6d6f64652d756e69636f726e2e7376672f31363270782d4f72672d6d6f64652d756e69636f726e2e7376672e706e67.png]]
+
+** TODO This is just  a task   [4/8] [50%]
+- [X] This is a a test for our current work
+- [X] Now we are talking about next item in oour group
+- [ ] how about next task
+- [X] Or adding more item to our current file.
+- [X] This is a good way
+- [ ] Adding more items T
+- [ ]  for curretn siutation
+- [ ]  for another way to
+
+** This is a test
+Now, lets create man things with our current objective as you can see
+
+  Adding more advanced material to current file as you can see.
+
+  - [ ] this is just a point
+  - [ ]  how about this one
+- [ ] adding more infomration

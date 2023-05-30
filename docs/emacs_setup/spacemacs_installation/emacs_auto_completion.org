@@ -1,0 +1,41 @@
+* Spacemacs Auto-completion
+** for current objective you can see
+I wrote a guide on how to install the auto-completion to your spacemacs. There are
+for what you can do with the original file is magnficent
+
+** Diagonstic tools
+This would be greate if you can achieve the following for your current
+configurations *item* and =wow= angle. Adding more advanced theoritical working system.
+
+** Configurations and Setup
+This is could you write more accurte on this subject. Asking for
+
+*** For current objective you can see
+      The followign item shows that I am writing things more accurate than,
+      Could you see if this is working on any buffer? wowk this wold will always with my file
+      how about. I have the best performance for current as you can see for your objective.
+      - This is the test you can work on the followiing right away.
+
+** Another way to see.
+This is a great way to make thing
+- [X] for curent
+- [X] more information can be added to the current file system as you can see.
+- [X] or adding more
+- [X] Assume the right way to make things right
+
+* TODO This is level - 1
+Adding here more details aobut your current objective. There are many way to achieve our current objective as you can see.
+** This is level -2
+*** This is level-3
+**** This is level-4
+***** This is level-5
+
+** Tasks, Compilation
+- [X]  The first task
+- [X] Second task
+- [X] another task
+- [ ] this is another test
+
+- [ ] This is a test for curretn
+
+- [ ]

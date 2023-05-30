@@ -34,3 +34,6 @@ direcotry.
 ### Searching inside pdf
 - Inside `pdf` the best one I found is `<leader> m s` then `s` for `pdf-occur`
   then enter the `keyword` you want to search for.
+
+## References
+- [using Emacs 44 - An Org mode and PDF - Tools workflow](https://www.youtube.com/watch?v=LFO2UbzbZhA)

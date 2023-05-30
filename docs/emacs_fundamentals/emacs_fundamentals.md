@@ -93,7 +93,9 @@ Here is the list of things that I change
 | `describe-mode`                | describe with help for a given mode                               |
 | `describe-key`                 | describe a keybinding                                             |
 | `describe-face`                | about the theme/colors in `emacs`                                 |
-| `Rainbow Mode`                 | Activate the colors in the buffer base don the `color` layer      |
+| `Rainbow Mode`                 | Activate the colors in the buffer base don the color layer.       |
+| `open-command-log-buffer`      | This will allow you to see the keystrokes                         |
+| `close-command-log-buffers`    | This will close the log-command-buffer                            |
 |                                |                                                                   |
 
 ## How to use the LSP

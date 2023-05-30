@@ -58,6 +58,14 @@ Yes, you can, as
    highlight in visual mode one of the file names and if you can find other
    occurrences).
 
+## Using Macro
+This is simple method that I found [read more here](./docs/emacs_tips_tricks/macros.md)
+- Put your cursor at given position and press `F3`.
+- Then insert mode, and push enter to go to next line.
+- exit the ensert mode and use `F3` to close,
+
+
+
 ## References
 - [How to input series of numbers](https://emacs.stackexchange.com/questions/5632/how-to-input-number-series-with-appointed-amount-in-emacs)
 - [How to increment a series of number on the same row](https://stackoverflow.com/questions/16921013/how-to-increment-a-serie-of-number-on-the-same-row-in-a-configuration-file)
