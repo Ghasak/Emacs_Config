@@ -10,6 +10,7 @@ There are several Evil tools that add text manipulation features to your Vim sty
 
 ## Evail Packages
 Most of these packages are already included in `spacemacs`.
+
 | package                  | usage                                                                                                                                    |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | evil-lion:               | port of lion.vim for rapid text alignment                                                                                                |
@@ -24,7 +25,6 @@ Most of these packages are already included in `spacemacs`.
 | avy                      | despite not starting with evil, avy is well integrated in evil-mode. It jumps around text and works with evil commands, like evil-delete |
 | evil-collection          | collection of bindings in several modes, probably the first you want to check if you haven't yet                                         |
 | evil-matchit             | Press “%” to jump between matched tags (“<div>” and “</div>” in html, etc).                                                              |
-|                          |                                                                                                                                          |
 
 ## Useful Evil-owl
 This package offer to show the register and all the entires.
@@ -33,7 +33,7 @@ This package offer to show the register and all the entires.
 - Press q, @, ​"​, C-r, m, ​'​, or ` to view the popup, press C-f or C-b to scroll
   it, and input a register or mark to make the popup disappear.
 
-
+for the cur
 
 ## Alter behavior of evil
 I use the following steps

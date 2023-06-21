@@ -96,7 +96,8 @@ Here is the list of things that I change
 | `Rainbow Mode`                 | Activate the colors in the buffer base don the color layer.       |
 | `open-command-log-buffer`      | This will allow you to see the keystrokes                         |
 | `close-command-log-buffers`    | This will close the log-command-buffer                            |
-|                                |                                                                   |
+| `<leader>sw`                   | Built-in web-browser for `Emacs` , it called `eww`                |
+| `<leader>`                         |                                                                   |
 
 ## How to use the LSP
 After accessing the `lsp` for the specialized programming language, you can use

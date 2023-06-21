@@ -178,3 +178,9 @@ M-x insert-kbd-macro inserts in the buffer a keyboard macro’s definition, as L
 
 ## References
 - [Emacs Macros: All you really need to know](https://www.youtube.com/watch?v=_WLauBkO5rI)
+
+
+(+ 1 2 )
+(+ 3 2 )
+(+ 1 4 )
+(+ 1 5 )

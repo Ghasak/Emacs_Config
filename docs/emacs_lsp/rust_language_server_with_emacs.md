@@ -46,5 +46,18 @@ Crate: emacs_testing(11)
 Dependencies: core=Idx::<CrateData>(0), alloc=Idx::<CrateData>(1), test=Idx::<CrateData>(8), std=Idx::<CrateData>(9), proc_macro=Idx::<CrateData>(10)
 ```
 
-
 ## Can we add inlay
+I was able to make the `inlay` working using the following, Adding these will allow to show the types in `Rust`, which is not supporting other `LSP` from the `lsp-config` at the momement.
+
+```elisp
+  ;; -------------------------------------------------------------
+  ;;                   LISP (configurations)
+  ;; -------------------------------------------------------------
+
+  ;; ;; Prettifying Rust
+  (add-hook 'rust-mode-hook
+            (lambda () ;;(prettify-symbols-mode)
+              (setq lsp-inlay-hint-enable t)
+              ))
+
+```

@@ -3,7 +3,8 @@ Emacs Config file for my daily workflow -
 
 ## Changelog
 Changes made to this guide:
-
+- `2023-06-22`: Added explinations about the `c/c++` language using the `c-c++` layer.
+- `2023-06-02`: Added support for the `org-mode` and inlay for `rust` from the `lsp-mode`.
 - `2023-05-22`: Added docs sub directory with all give configurations.
 - `2023-05-10`: Starting the `Emacs` config file based on `Spacemacs`.
 
@@ -19,6 +20,7 @@ Changes made to this guide:
 - [x] latex
 - [x] Control Obsidian
 - [x] shell scripting support
+
 
 ## Quickstart
 Current `spacemacs` configurations supports

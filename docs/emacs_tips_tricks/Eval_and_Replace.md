@@ -1,7 +1,9 @@
 # Eval and Replace
 I start to use `Emacs` after seeing this feature which can `eval` a buffer `written in elisp` and get you the answer,
 this will be very much handy when you want to execute a `file.el` file or any where at any buffer. Here, How I have
-test it out
+test it out.
+
+## Insights
 
 1. Create a buffer called `playground.el` or what ever.
 2. put inside the following function (will be mapped later for emacs-lisp integration with keybinding)
@@ -68,6 +70,19 @@ Now in the buffer I’m currently editing I can type (/ 1984 16) and press C-c e
 the original expression. Pretty neat! I’ll leave it up to you to think of more creative applications of the command.
 This command is available in `crux` as `crux-eval-and-replace`. This command is also available in prelude via the `crux`
 package.
+
+## Evaluate More Insights
+I found a nice way to insert a `eval` results in `elisp` using the following
+example.
+- Put the cursor at the end of each item and run `M-x: eval-region`
+
+```elisp
+(+ 5 7)
+(message "hello world")
+(format-time-string "%D %-I:%M %p")
+(insert (concat "the time is "(format-time-string "%D %-I:%M %p")))
+```
+
 
 ## References
 I got this function from
