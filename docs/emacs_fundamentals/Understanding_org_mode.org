@@ -1,0 +1,139 @@
+* Org Mode in Action Understanding
+~org mod~ for mananging multiple projects and environments. Which
+will allow us to work with several files, notes, ..etc. This will be covered.
+are:
+- [X]  Org mode basics
+- [X]  Org customizaitons
+- [X]  Org mode Agenda
+- [X]  Org mode Canlendar
+
+** Key Bindings and Commands
+
+| keybinding                     | Command | Description                    | Note                                  |
+|--------------------------------+---------+--------------------------------+---------------------------------------
+| tab / shift tab                |         | Fold/unflod                    | In general org mode
+| alt + h/l                      |         | Indent a headline              | In general org mode ok)
+| alt+ j/k                       |         | Up/down a headline             | In general org mode ok)
+| <leader>ji                     |         | Searching for headers quickly  |
+| C-C + [                        |         | adding file to org-agenda      | In org agenda
+| <space> a o o                  |         | accessing org-agenda dashboard | Assume you added a file to org-agenda
+| <space> a o t                  |         | List all the tracked files     | In org agenda
+| , d  or <space>m d             |         | Access the calender scheduler  | In org calender
+| helm-org-agenda-files-headings |         | search all heading             |
+
+
+*** You can search through all headings in a file using (SPC j i)
+
+** Links, Images, and other Markup
+The org link format is [[link][]] e.g. my github You can also link to images in
+the same way but without the link text. Images can have a caption and a name
+however.
+
+** Tables
+Org makes it really easy to work with text based tables.
+| Heading 1 | Heading 2 | heading 3 |
+|-----------+-----------+-----------|
+|         0 | Name 0    | City 0    |
+|         1 | Name 1    | City 1    |
+|         2 | Name 2    | City 2    |
+
+** Agenda
+The agenda in ~org mode~ is given us the ability to track one or more files ~single file~ progress.
+*** How to add file to agenda
+To add a file to an agenda we use the ~ctrl - c + [~ a mini buffer will be added in the bottom, It says file added to front of agenda file list. This is equivalent of setting the following.
+
+#+begin_src #+begin_src emacs-lisp :tangle yes
+'(org-agenda-files (quote("~/Dropbox/org_tutorial.org")))
+#+end_src
+***(Also note the nice code block up here, syntax highlighting and all)***
+
+*** The =org-agenda= command =(SPC a o o)= gives a number of options ...
+
+*** Agenda Canlendar
+We use schedule any file/task and tracking it with time using ~<space> m + d~ or ~. + d~ then select one of the options (e.g. ~org-schedule~) there you can select the time using the mouse or
+1. First add the ~org-file~ to the =org-agenda= using ~<C-C + [~
+2. Specify the schedule data first
+   1. =+1w=     : Means one week from now (this arithmetics can be done for ~d~ -> day, ~m~ -> month, ~y~ -> year ..etc.).
+   2. =+1d 5pm= : Means one day from now at 5:00 pm (it will show you how many hours added to finish this task).
+   3. ~wednesday at 5pm~ : Human readable format also possible.
+   4. You can use the text format as:  =DEADLINE: <2023-06-14 Wed 17:00>= which is also possible.
+3. The date will be added to your header, to check the agenda tracker use ~<leader>m + a + o~ then ~a~ to list all the attached files to the =org-agenda=.
+4. In =org-agenda buffer= You can forward time using ~f~ or backward in time using ~b~
+5. Useful keys for navigtion in ~org agenda buffer~.
+
+  | Command                 | Key   | Description   |
+  |-------------------------+-------+---------------|
+  | ‘org-agenda-later’      | (M-l) |               |
+  | ‘org-agenda-goto-today’ | (.)   |               |
+  | ‘org-agenda-goto-date’  | (J)   |               |
+  |                         | (F)   | forward time  |
+  |                         | (B)   | backward time |
+
+For more details check here:
+
+*** =A=. =Navigation=:
+~j~ or ~n~: Move to the next line in the agenda.
+~k~ or ~p~: Move to the previous line in the agenda.
+(~B~): Move backward in time.
+(~F~): Move forward in time.
+~gg~ or ~C-u C-u C-c C-c~: Move to the beginning of the agenda.
+~G~ or ~C-u C-u C-c C-n~: Move to the end of the agenda.
+~SPC~: Scroll the agenda buffer upward.
+~S-SPC~: Scroll the agenda buffer downward.
+
+**** =B=. =View Control=:
+
+~t~: Toggle the display of the time grid.
+~d~: Toggle the display of the diary.
+~L~: Toggle the display of the logbook.
+~C-c C-x C-a~: Toggle the display of archived entries.
+~C-c C-x C-s~: Toggle the display of scheduled entries.
+~C-c C-x C-d~: Toggle the display of deadline entries.
+~C-c C-x C-c~: Toggle the display of closed entries.
+~C-c C-x C-t~: Toggle the display of timestamps.
+**** =C=. =Date Selection=:
+
+~0~ to ~9~: Jump to a specific day in the agenda.
+~m~: Go to a specific month in the agenda.
+~C-c C-s~: Jump to a specific week in the agenda.
+~C-c C-t~: Jump to a specific date in the agenda.
+
+**** =D=. =Other Actions=:
+
+~RET~ or ~TAB~: Open the entry at point in a separate buffer.
+~S-RET~: Open the entry at point in the current buffer.
+~d~: Mark an entry as done (complete).
+~S-<down>~: Change the priority of an entry.
+~C-c C-c~: Execute the command associated with the item at point.
+~C-c C-w~: Copy the link of the item at point.
+~C-c C-j~: Jump to the entry associated with the item at point.
+
+** Aditional Features
+You can also use
+#+begin_src #+begin_src emacs-lisp :tangle yes
+(spacemacs/declare-prefix "o" "own-menu")
+(spacemacs/set-leader-keys "os" 'org-save-all-org-buffers)
+(spacemacs/set-leader-keys "oi" 'helm-org-agenda-files-headings)
+#+end_src
+
+** Exportingg
+There are several format to export the ~org mode~ (with number of formats). We use =(, e e)= opens the menu, you can find some useful themes here https://github.com/fniessen/org-html-themes Code, tables, etc, will all be rendered as expected. ~GitHub~ will automatically render =org files=. I export either using ~HTML~ or ~pdf~ (just follow the transient buffer keybindings)
+- ~[C-s]~ Export scope: Buffer/Subtree. If you use =Buffer= you will render the entire file, while if you use =Subtree= you will render only the sub-bullets under neath of all other bullets under your given cursor.
+
+** DONE Things will not be covered [5/5][100%]
+CLOSED: [2023-06-18 Sun 01:46]
+- State "DONE"       from              [2023-06-18 Sun 01:46]
+The following features of the ~org~ mode is given with many features and options
+to be configured, which will give us more good ways to configure multiple =advanced topic= that will create a big
+projects and files.
+
+** Some Advanced topics to look up
+*** Table formulas (org as excel!)
+*** Running code inside org-mode (literatte programming!)
+*** Org Capture
+*** Latex with Org
+*** Org Roam
+**** Org-Roam Nodes UI
+*** Org noter
+*** Org Presentation
+*** Orgzly (Android App for sync Org-mode with your phone)

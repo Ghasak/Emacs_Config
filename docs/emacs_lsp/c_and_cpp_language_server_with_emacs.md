@@ -1,5 +1,19 @@
 # C/C++ Layer
 For current implementation for the `c/c++` for full supporting the language.
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [C/C++ Layer](#cc-layer)
+    - [BackEnd Support](#backend-support)
+    - [Path to LSP Sever executable](#path-to-lsp-sever-executable)
+    - [Adding dependencies to clangd](#adding-dependencies-to-clangd)
+    - [Necessary Tools](#necessary-tools)
+        - [clang-format](#clang-format)
+    - [Notes by Eivind Fonn](#notes-by-eivind-fonn)
+        - [1.1 Tell Emacs How to Compile](#11-tell-emacs-how-to-compile)
+    - [Reference](#reference)
+
+<!-- markdown-toc end -->
 
 ## BackEnd Support
 There are two `backend` supports for `c-c++` in `spacemacs`. These are
@@ -59,11 +73,38 @@ else
     echo "    - -I${INCLUDE_PATH}" >> "$CLANGD_CONFIG"
 fi
 ```
+## Necessary Tools
+### clang-format
+I have used `clang-format` to keep on formatting my buffer on save. Simply
 
-
-
-
+```sh
+brew install clang-format
+```
 ## Notes by Eivind Fonn
+### 1.1 Tell Emacs How to Compile
+- We will set our `Spacemacs` to infor `helm` how to find our `make` and build
+  our project (assume you already configured using cmake first).
+1. You will create a file in the `root` directory called `.dir-locals.el` with
+   the following snippet (assume we want to run the make in our build/debug
+   directory)
+
+```elisp
+((c++-mode (helm-make-build-dir . "build/debug/")))
+```
+2. The command for `helm` to find the make is `<space>cc` which if you define
+   correctly it will load all the `make` file commands at the specified
+   directory (e.g. debug or release).
+3. Put in your `.spacemacs` the command in your `(defun dotspacemacs/user-config
+   ()`.
+
+```elisp
+;; will look for a file .dir-local-l and load the variable you put, and it will tell the make how to build your C++ project.
+(put 'helm-make-build-dir 'safe-local-variable 'stringp)
+```
+4. Reboot your `clangd` by exiting the buffer and you should have now
+   `helm-make-build-dir` set to the run the `make` file of the `./build/debug`
+   directory in your given project (read more
+   [Ref-1].
 
 
 
