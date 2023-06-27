@@ -6,6 +6,7 @@
     - [ChangeLog](#changelog)
     - [Content](#content)
         - [Using Emacs](#using-emacs)
+            - [Steps for Debugging in Emacs](#steps-for-debugging-in-emacs)
         - [Using Terminal](#using-terminal)
             - [Steps in lldb](#steps-in-lldb)
         - [Current workflow for investigate variables](#current-workflow-for-investigate-variables)
@@ -270,7 +271,7 @@ Also its strightforward, using `vscode memeory veiwer` and also you will need
 `~/.vscode/extensions/vadimcn.vscode-lldb-1.9.0/lldb/bin/lldb` with current
 version `lldb version 16.0.0-custom rust-enabled`
 
-- ![Image01](./docs/assets/m03.png)
+- ![Image01](../assets/)
 
 ## References
 
