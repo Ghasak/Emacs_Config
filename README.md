@@ -3,6 +3,7 @@ Emacs Config file for my daily workflow -
 
 ## Changelog
 Changes made to this guide:
+- `2023-08-28`: Added .spacemacs and early_init.el for my current Intel Machine Base, Using `Emacs29`.
 - `2023-06-22`: Added explinations about the `c/c++` language using the `c-c++` layer.
 - `2023-06-02`: Added support for the `org-mode` and inlay for `rust` from the `lsp-mode`.
 - `2023-05-22`: Added docs sub directory with all give configurations.
@@ -33,3 +34,5 @@ Current `spacemacs` configurations supports
 git clone https://github.com/Ghasak/emacs_config
 emacs -q --load ~/.spacemancs
 ```
+
+
