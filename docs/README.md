@@ -1,11 +1,11 @@
 # Fundamentals for Emacs
 Emacs List of important requsted features
 
-- [ ] Org Mode and
-- [ ] Org Mode Configurations
-- [ ] PDF Note Taker with OrgMode
-- [ ] dap config for emacs (JavaScript, Swift, lua, R ..etc.)
-- [ ] lisp langauge and lisp plugins dev.
+- [x] Org Mode and
+- [x] Org Mode Configurations
+- [x] PDF Note Taker with OrgMode
+- [x] dap config for emacs (JavaScript, Swift, lua, R ..etc.)
+- [x] lisp langauge and lisp plugins dev.
 - [ ] magit
 - [ ] latex
 - [ ] yasnippets!
@@ -14,11 +14,11 @@ Emacs List of important requsted features
 ## Projects to be considered
 The followign ideas that I wish to impelement in my current workflow
 - [x] Close my `buffer` using `<leader> q` to match my `nvim` enviroment.
-- [ ] pdf note-taker assembly all notes from several pdfs and collect them all together.
+- [x] pdf note-taker assembly all notes from several pdfs and collect them all together.
   - Read about Larson-code
 - [x] build your `Emacs` from scratch to support both `image vectors` based on `Emacs with extra options`.
   - Check my noets about the setup
-- [ ] Write documentation about `build` and `dap` by specifying the location of the `dap`.
+- [x] Write documentation about `build` and `dap` by specifying the location of the `dap`.
 - [x] Write documentation about exporting `Platypus` applications such as `zathura` and `neovide`.
 
 

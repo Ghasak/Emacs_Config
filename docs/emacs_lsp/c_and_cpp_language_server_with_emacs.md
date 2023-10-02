@@ -1,5 +1,6 @@
 # C/C++ Layer
 For current implementation for the `c/c++` for full supporting the language.
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
@@ -106,6 +107,49 @@ brew install clang-format
    directory in your given project (read more
    [Ref-1].
 
+5. I also found that we can use the `projectile` in the given project using
+  1. Ensure you have the link to build your project in `CMake` `Ninja` or whatever.
+  2. Run `<space>pc` this will open a buffer for your to put your command (e.g. for my AnimationEngine) I use:
+```sh
+cmake -DCMAKE_BUILD_TYPE=Release -S . -B build/release && cd ./build/release/ && make && ./main && ../../
+```
+
+## Adding the clangd server indexing
+I have found that the `CMake` has the ability to update the index for our `clangd` server using the command
+
+```cmake
+# Setting my compling command for clangd language server
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+```
+- Now, you can link it to your main root directory as it will be creatged in the
+  `/build/debug` or `/build/release` for your project based on your
+  `CMakeList.txt` specification.
+
+- You can now `jump to definition`, `syntax highlighting`, and all other features of the `clangd` server for your current build.
+
+
+
+## Adding Env of your Project
+Load the `.env` or `.envrc` of your given project is done using the following
+1. In your `.spacemacs` you can add the snippet that shows the location of the `.envrc/.env`.
+
+```shell
+;; -------------------------------------------------------------
+;;             Load Env variables (.envrc)
+;;         For a given project you must provide
+;;         the directory for the .env, or .envrc
+;; -------------------------------------------------------------
+;; Project RaylibEngine (hint: dotspacemacs-directory refer to
+;; the location where the .spacemacs is located, which our home directory)
+(load-env-vars (concat dotspacemacs-directory "Desktop/devCode/cppDev/RaylibEngine/.envrc"))
+```
+
+## How to allow clangd to detect also C files
+You can add the following,
+
+```sh
+(push '("C" I'h") projectile-other-file-alist)
+```
 
 
 ## Reference

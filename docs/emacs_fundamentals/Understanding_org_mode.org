@@ -8,6 +8,7 @@ are:
 - [X]  Org mode Canlendar
 
 ** Key Bindings and Commands
+Keybinding for the most activities in ~Emacs~ which are used on daily basis =keybinding= with activities:
 
 | keybinding                     | Command | Description                    | Note                                  |
 |--------------------------------+---------+--------------------------------+---------------------------------------
@@ -133,7 +134,6 @@ projects and files.
 *** Org Capture
 *** Latex with Org
 *** Org Roam
-**** Org-Roam Nodes UI
 *** Org noter
 *** Org Presentation
 *** Orgzly (Android App for sync Org-mode with your phone)
