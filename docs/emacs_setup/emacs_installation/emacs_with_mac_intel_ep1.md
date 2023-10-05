@@ -90,8 +90,6 @@ chmod +x ~/.vscode/extensions/ms-vscode.cpptools-1.14.5-darwin-x64/debugAdapters
 ```
 otherwise it wont works.
 
-
-
 ## Reference
 - [emacs plugs](https://github.com/d12frosted/homebrew-emacs-plus#no-titlebar)
 - [spacemacs](https://github.com/syl20bnr/spacemacs)

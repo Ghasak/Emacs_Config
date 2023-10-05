@@ -16,6 +16,8 @@
     - [References](#references)
 
 <!-- markdown-toc end -->
+## Current Emacs
+The only working version of `emacs` is called [homebrew-emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus).
 
 ## Configurations
 The current Configurations that I am working on are based on the pre-built
