@@ -6,13 +6,14 @@ Emacs Config file for my daily workflow -
 
 Changes made to this guide:
 
-- `2023-08-28`: Added .spacemacs and early_init.el for my current Intel Machine Base, Using `Emacs29`.
-- `2023-10-02`: Fixed the problem of void treemacs--setup-icon-background-colors
-- `2023-09-23`: Added the yanking and region highlights
-- `2023-06-22`: Added explinations about the `c/c++` language using the `c-c++` layer.
-- `2023-06-02`: Added support for the `org-mode` and inlay for `rust` from the `lsp-mode`.
-- `2023-05-22`: Added docs sub directory with all give configurations.
-- `2023-05-10`: Starting the `Emacs` config file based on `Spacemacs`.
+- `2023-10-02`: Fixed the problem of void treemacs--setup-icon-background-colors.
+- `2023-09-10`: Now I am using `Emacs30` natively on my current machine.
+- `2023-08-28`: Added .spacemacs and early_init.el for my current Intel Machine Base, using Emacs29.
+- `2023-09-23`: Added yanking and region highlights.
+- `2023-06-22`: Added explanations about the c/c++ language using the c-c++ layer.
+- `2023-06-02`: Added support for the org-mode and inlay for rust from the lsp-mode.
+- `2023-05-22`: Added docs subdirectory with all given configurations.
+- `2023-05-10`: Starting the Emacs config file based on Spacemacs.
 
 ## To do
 
@@ -47,3 +48,5 @@ emacs -q --load ~/.spacemancs
 1. void-function treemacs--setup-icon-background-colors
 
 - Track the solution here: [Helm-icons-Issues](https://github.com/yyoncho/helm-icons/issues/23)
+
+Sure! Here is the text with improved grammar and spelling:
