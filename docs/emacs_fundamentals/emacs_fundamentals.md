@@ -27,9 +27,10 @@ The following configurations for my `Emacs` are based on `spacemecas`
 configurations. Now, everything works flawlessly.
 
 ## Quick way to navigate between buffers
+
 | keybinding          | Description                                                                                                                                                                           |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SPC TAB or SPC b b: | This keybinding shows a list of open buffers in the current frame. You can navigate through the list using the arrow keys and press RET (Enter) to switch to the selected buffer.     |
+| SPC TAB or SPC b b: | This keybinding shows a list of open buffers in the current frame. <\b>You can navigate through the list using the arrow keys and press RET (Enter) to switch to the selected buffer.     |
 | SPC b n or SPC b p: | These keybindings allow you to cycle forward (SPC b n) or backward (SPC b p) through the open buffers. Press the respective keybinding multiple times to switch to different buffers. |
 | SPC b 0 to SPC b 9: | These keybindings allow you to quickly switch to buffers numbered from 0 to 9. For example, pressing SPC b 1 will switch to the first buffer in the buffer list.                      |
 | SPC b d           : | This keybinding shows a list of recently visited buffers. You can navigate through the list using the arrow keys and press RET (Enter) to switch to the selected buffer.              |
