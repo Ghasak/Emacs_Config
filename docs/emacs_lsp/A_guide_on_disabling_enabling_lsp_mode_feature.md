@@ -9,7 +9,16 @@
 <!-- markdown-toc end -->
 
 ## Content
-Early in the project, we decided to auto-configure/enable all of the stable features by default in order to improve discoverability and simplify the setup for the beginners. This decision was considered good by the majority of the users coming from IDEs but still in Emacs community there are a lot of people looking for a minimal distraction-free experience especially traditional long time users. Although the turn off defcustom settings are documented in corresponding README and available via customize-group it turned out that it is not very easy to find them when you want to turn a particular feature off which led to a lot of frustration. Hopefully, this article will help solving that issue:
+Early in the project, we decided to auto-configure/enable all of the stable
+features by default in order to improve discoverability and simplify the setup
+for the beginners. This decision was considered good by the majority of the
+users coming from IDEs but still in Emacs community there are a lot of people
+looking for a minimal distraction-free experience especially traditional long
+time users. Although the turn off defcustom settings are documented in
+corresponding README and available via customize-group it turned out that it is
+not very easy to find them when you want to turn a particular feature off which
+led to a lot of frustration. Hopefully, this article will help solving that
+issue:
 
 Turn Off 1 1. Symbol highlighting
 
@@ -77,4 +86,5 @@ Turn Off 4 14. Completion (company-mode)
 
 
 ## Reference
-- [ ](https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/)
+
+- [how to turn off lsp-mode](https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/)

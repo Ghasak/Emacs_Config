@@ -768,8 +768,47 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(pdf-tools all-the-icons-completion all-the-icons-dired company-tabnine yasnippet-snippets yapfify yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vim-powerline vi-tilde-fringe uuidgen use-package unfill undo-tree typescript-mode toml-mode toc-org terminal-here term-cursor tagedit systemd symon symbol-overlay string-inflection string-edit-at-point sphinx-doc spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline space-doc smeargle slim-mode shfmt shell-pop scss-mode sass-mode rust-mode ron-mode reveal-in-osx-finder restart-emacs request ranger rainbow-delimiters quickrun pytest pylookup pyenv-mode pydoc py-isort pug-mode prettier-js posframe popwin poetry pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer osx-trash osx-dictionary osx-clipboard orgit-forge org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file npm-mode nose nord-theme nodejs-repl neotree nameless mwim multi-vterm multi-term multi-line mmm-mode markdown-toc macrostep lsp-ui lsp-python-ms lsp-pyright lsp-origami lorem-ipsum livid-mode live-py-mode link-hint launchctl json-reformat json-navigator json-mode js2-refactor js-doc journalctl-mode inspector insert-shebang info+ indent-guide importmagic impatient-mode hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link git-gutter-fringe gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-package flycheck-elsa flycheck-bashate flx-ido fish-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode doom-themes dockerfile-mode docker-tramp docker dired-quick-sort diminish devdocs cython-mode csv-mode company-web company-statistics company-shell company-quickhelp company-lua company-emoji company-anaconda column-enforce-mode code-cells clean-aindent-mode centered-cursor-mode cargo browse-at-remote blacken beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell)))
-(custom-set-faces
+   '(pdf-tools all-the-icons-completion all-the-icons-dired company-tabnine
+yasnippet-snippets yapfify yaml-mode xterm-color ws-butler writeroom-mode winum
+which-key web-mode web-beautify volatile-highlights vim-powerline
+vi-tilde-fringe uuidgen use-package unfill undo-tree typescript-mode toml-mode
+toc-org terminal-here term-cursor tagedit systemd symon symbol-overlay
+string-inflection string-edit-at-point sphinx-doc spacemacs-whitespace-cleanup
+spacemacs-purpose-popwin spaceline space-doc smeargle slim-mode shfmt shell-pop
+scss-mode sass-mode rust-mode ron-mode reveal-in-osx-finder restart-emacs
+request ranger rainbow-delimiters quickrun pytest pylookup pyenv-mode pydoc
+py-isort pug-mode prettier-js posframe popwin poetry pippel pipenv
+pip-requirements persp-mode pcre2el password-generator paradox overseer
+osx-trash osx-dictionary osx-clipboard orgit-forge org-superstar org-rich-yank
+org-projectile org-present org-pomodoro org-mime org-download org-contrib
+org-cliplink open-junk-file npm-mode nose nord-theme nodejs-repl neotree
+nameless mwim multi-vterm multi-term multi-line mmm-mode markdown-toc macrostep
+lsp-ui lsp-python-ms lsp-pyright lsp-origami lorem-ipsum livid-mode live-py-mode
+link-hint launchctl json-reformat json-navigator json-mode js2-refactor js-doc
+journalctl-mode inspector insert-shebang info+ indent-guide importmagic
+impatient-mode hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses
+highlight-numbers highlight-indentation hide-comnt help-fns+ helm-xref
+helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle
+helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep
+helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag
+google-translate golden-ratio gnuplot gitignore-templates git-timemachine
+git-modes git-messenger git-link git-gutter-fringe gh-md fuzzy
+flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-package
+flycheck-elsa flycheck-bashate flx-ido fish-mode fancy-battery eyebrowse
+expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor
+evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter
+evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state
+evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion
+evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z
+eshell-prompt-extras esh-help emr emojify emoji-cheat-sheet-plus emmet-mode
+elisp-slime-nav elisp-def editorconfig dumb-jump drag-stuff dotenv-mode
+doom-themes dockerfile-mode docker-tramp docker dired-quick-sort diminish
+devdocs cython-mode csv-mode company-web company-statistics company-shell
+company-quickhelp company-lua company-emoji company-anaconda column-enforce-mode
+code-cells clean-aindent-mode centered-cursor-mode cargo browse-at-remote
+blacken beacon auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile
+all-the-icons aggressive-indent ace-window ace-link ace-jump-helm-line
+ac-ispell))) (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.

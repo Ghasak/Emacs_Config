@@ -7,13 +7,13 @@ You can install it using either.
 
 1. Homebrew
 
-```shell
+```sh
 brew install rust-analyzer
 # Current I have
-#╭─ gmbp   GMacBookPro on ~/Desktop/emacs_testing/docs   
-#├─ﮧ INSERT  19487d12h59m|master ?5
-#╰─ rust-analyzer --version
-#rust-analyzer 0.0.0 (833d5301d 2023-05-07)
+╭─ gmbp   GMacBookPro on ~/Desktop/emacs_testing/docs   
+├─ﮧ INSERT  19487d12h59m|master ?5
+╰─ rust-analyzer --version
+rust-analyzer 0.0.0 (833d5301d 2023-05-07)
 ```
 2. Export the already existed `stable` version comes with `cargo` located at `~/.cargo/bin/`
 
@@ -49,7 +49,7 @@ Dependencies: core=Idx::<CrateData>(0), alloc=Idx::<CrateData>(1), test=Idx::<Cr
 ## Can we add inlay
 I was able to make the `inlay` working using the following, Adding these will allow to show the types in `Rust`, which is not supporting other `LSP` from the `lsp-config` at the momement.
 
-```elisp
+```lisp
   ;; -------------------------------------------------------------
   ;;                   LISP (configurations)
   ;; -------------------------------------------------------------

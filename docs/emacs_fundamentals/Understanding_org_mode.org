@@ -22,7 +22,6 @@ Keybinding for the most activities in ~Emacs~ which are used on daily basis =key
 | , d  or <space>m d             |         | Access the calender scheduler  | In org calender
 | helm-org-agenda-files-headings |         | search all heading             |
 
-
 *** You can search through all headings in a file using (SPC j i)
 
 ** Links, Images, and other Markup

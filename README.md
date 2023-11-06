@@ -6,6 +6,7 @@ Emacs Config file for my daily workflow -
 
 Changes made to this guide:
 
+- `2023-11-07`: Adding more configurations to support multiple coding experiences.
 - `2023-10-02`: Fixed the problem of void treemacs--setup-icon-background-colors.
 - `2023-09-10`: Now I am using `Emacs30` natively on my current machine.
 - `2023-08-28`: Added .spacemacs and early_init.el for my current Intel Machine Base, using Emacs29.
@@ -18,7 +19,6 @@ Changes made to this guide:
 ## To do
 
 - [x] An org-mode workflow for application processing
-
 - [x] Org Mode and
 - [x] Org Mode Configurations
 - [x] PDF Note Taker with OrgMode

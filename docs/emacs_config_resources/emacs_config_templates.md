@@ -1,4 +1,5 @@
 # EMACS INIT.el
+
 The following repositories collection for better experience with emacs
 
 - [emacs-highlight-yanked](https://blog.meain.io/2020/emacs-highlight-yanked/)
@@ -16,6 +17,7 @@ The following repositories collection for better experience with emacs
 - [The bestest Emacs](https://github.com/meatcar/emacs.d)
 
 ## Spacemacs Configuration files
+
 - [Fancey Spacemacs - Outdated](https://out-of-cheese-error.netlify.app/spacemacs-config)
 - [Practicalli Spacemacs configuration](https://github.com/practicalli/spacemacs-config)
 - [Spacemacs Notes](https://github.com/picandocodigo/spacemacs-config/blob/master/spacemacs.org)
@@ -30,6 +32,7 @@ The following repositories collection for better experience with emacs
 - [spacemacs config file](https://github.com/millejoh/spacemacs-config/blob/master/spacemacs-home.el)
 
 ## Great Emacs Configurtions - Pure Emacs
+
 - This one has `pdf` utilities worth to be investigated., which is based on a question
   [here](https://www.reddit.com/r/emacs/comments/fkcgig/is_it_possible_to_search_annotations_text_with/)
 - [Larsen](https://github.com/larsen/emacs-configuration)
@@ -45,20 +48,26 @@ The following repositories collection for better experience with emacs
 - [Alpha2phi beginner configurations](https://alpha2phi.medium.com/emacs-beginner-configuration-9578dbe71d03)
 - [master yay-evil](https://github.com/ianyepan/yay-evil-emacs/blob/master/config.org)
 - [ianyepann macOS-emacs](https://github.com/ianyepan/.macOS-emacs.d/blob/master/init.el)
+- [Config by MatthewZMD](https://github.com/MatthewZMD/.emacs.d?tab=readme-ov-file)
 
 ## DOOM Emacs
+
 - [Doom Emacs Config - 1](https://zzamboni.org/post/my-doom-emacs-configuration-with-commentary/)
 - [Doom Emacs config - 2](https://tecosaur.github.io/emacs-config/config.html)
 
 ## Youtube and Channel Seriess
+
 - [Doom Emacs - Series](https://www.youtube.com/watch?v=eyYxuIGF8-g)
 - [DistroTube Emacs Configuration Main](https://gitlab.com/dwt1/dotfiles/-/blob/master/.config/doom/config.org#org-mode)
 
 ## Org Mode
+
 - [Config spacemacs org roam org noter](https://benswift.me/blog/2020/12/16/configuring-spacemacs-org-roam-org-noter-for-academic-writing-bliss/)
 - [Extract annotation from PDF -1-](https://emacs.stackexchange.com/questions/24733/is-it-possible-to-export-highlighted-text-with-pdf-tools)
 - [Extract annotation from PDF -2-](https://emacs.stackexchange.com/questions/24733/is-it-possible-to-export-highlighted-text-with-pdf-tools)
+
 ## Tools
+
 - [realgud for debugging in emacs](https://github.com/realgud/realgud)
 - [Configur dap for macos](https://www.hiroakit.com/archives/1966)
 - [Language Server in Emacs - Rust](https://emacs-lsp.github.io/lsp-mode/page/lsp-rust-analyzer/)

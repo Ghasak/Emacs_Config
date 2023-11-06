@@ -198,6 +198,13 @@ This can easily be done using dired:
 )
 ```
 
+## Adding dired-hacks
+The following plugin will add more features for the `dired` original library.
+
+
+
+
+
 ## Reference
 - [Emacs Dired rename many files](https://stackoverflow.com/questions/15881776/emacs-dired-rename-many-files)
 - [dired-rename-multiple files](https://pragmaticemacs.wordpress.com/2015/05/26/dired-rename-multiple-files/)

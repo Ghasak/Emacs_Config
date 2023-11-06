@@ -1,67 +1,71 @@
 # EMACS BASIC CONFIGURATIONS
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [EMACS BASIC CONFIGURATIONS](#emacs-basic-configurations)
-    - [CONCEPTS](#concepts)
-    - [Quick way to navigate between buffers](#quick-way-to-navigate-between-buffers)
-    - [Tips and Tricks](#tips-and-tricks)
-    - [Configurations with SpaceEmacs](#configurations-with-spaceemacs)
-    - [Keybinding I use](#keybinding-i-use)
-    - [How to use the LSP](#how-to-use-the-lsp)
-    - [Pacakges to be installed](#pacakges-to-be-installed)
-    - [Types of shells in Emacs](#types-of-shells-in-emacs)
-    - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
-    - [Language servers  and layers](#language-servers--and-layers)
-    - [Selected themes](#selected-themes)
-    - [Fonts Configurations](#fonts-configurations)
-      - [Other configurations](#other-configurations)
-    - [User configurations](#user-configurations)
-    - [From Scratch](#from-scratch)
-    - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
+  - [CONCEPTS](#concepts)
+  - [Quick way to navigate between buffers](#quick-way-to-navigate-between-buffers)
+  - [Tips and Tricks](#tips-and-tricks)
+  - [Configurations with SpaceEmacs](#configurations-with-spaceemacs)
+  - [Keybinding I use](#keybinding-i-use)
+  - [How to use the LSP](#how-to-use-the-lsp)
+  - [Pacakges to be installed](#pacakges-to-be-installed)
+  - [Types of shells in Emacs](#types-of-shells-in-emacs)
+  - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
+  - [Language servers and layers](#language-servers--and-layers)
+  - [Selected themes](#selected-themes)
+  - [Fonts Configurations](#fonts-configurations)
+    - [Other configurations](#other-configurations)
+  - [User configurations](#user-configurations)
+  - [From Scratch](#from-scratch)
+  - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
 
 <!-- markdown-toc end -->
 
 ## CONCEPTS
+
 The following configurations for my `Emacs` are based on `spacemecas`
 configurations. Now, everything works flawlessly.
 
 ## Quick way to navigate between buffers
 
-| keybinding          | Description                                                                                                                                                                           |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SPC TAB or SPC b b: | This keybinding shows a list of open buffers in the current frame. <\b>You can navigate through the list using the arrow keys and press RET (Enter) to switch to the selected buffer.     |
-| SPC b n or SPC b p: | These keybindings allow you to cycle forward (SPC b n) or backward (SPC b p) through the open buffers. Press the respective keybinding multiple times to switch to different buffers. |
-| SPC b 0 to SPC b 9: | These keybindings allow you to quickly switch to buffers numbered from 0 to 9. For example, pressing SPC b 1 will switch to the first buffer in the buffer list.                      |
-| SPC b d           : | This keybinding shows a list of recently visited buffers. You can navigate through the list using the arrow keys and press RET (Enter) to switch to the selected buffer.              |
+| keybinding          | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| SPC TAB or SPC b b: | This keybinding shows a list of open buffers                                   |
+| SPC b n or SPC b p: | These keybindings allow you to cycle forward or backward                       |
+| SPC b 0 to SPC b 9: | These keybindings allow you to quickly switch to buffers numbered from 0 to 9. |
+| SPC b d :           | This keybinding shows a list of recently visited buffers.                      |
 
 ## Tips and Tricks
-- You can use either `\`` or `'` to repeat last command you used in your given buffer.
+
+- You can use either ` \`` or  `'` to repeat last command you used in your given buffer.
 
 ## Configurations with SpaceEmacs
+
 Here is the list of things that I change
 
 - Working with lisp files (barfage, slurpage, & more)
-'
-| Key       | Binding                                                | Description |
-|-----------|--------------------------------------------------------|-------------|
-| SPC m g g | go to definition of symbol under point                 |             |
-| SPC m h h | describe symbol at point                               |             |
-| SPC m c c | byte compile the current file                          |             |
-| SPC m c l | popup compile-log buffer                               |             |
-| SPC m e $ | or SPC m e l	go to end of current line and evaluate |             |
-| SPC m e b | evaluate current buffer                                |             |
-| SPC m e c | evaluate current form (start with defun, setq, etc…)   |             |
-| SPC m e e | evaluate sexp before point                             |             |
-| SPC m e r | evaluate current region                                |             |
-| SPC m e f | evaluation current function                            |             |
-| SPC m     | toggle lisp state                                      |             |
-| SPC m t b | run tests of current buffer                            |             |
-| SPC m t q | run ert                                                |             |
-| SPC m d m | open macrostep transient-state                         |             |
+
+  | Key       | Binding                                              | Description |
+  | --------- | ---------------------------------------------------- | ----------- |
+  | SPC m g g | go to definition of symbol under point               |             |
+  | SPC m h h | describe symbol at point                             |             |
+  | SPC m c c | byte compile the current file                        |             |
+  | SPC m c l | popup compile-log buffer                             |             |
+  | SPC m e $ | or SPC m e l go to end of current line and evaluate  |             |
+  | SPC m e b | evaluate current buffer                              |             |
+  | SPC m e c | evaluate current form (start with defun, setq, etc…) |             |
+  | SPC m e e | evaluate sexp before point                           |             |
+  | SPC m e r | evaluate current region                              |             |
+  | SPC m e f | evaluation current function                          |             |
+  | SPC m     | toggle lisp state                                    |             |
+  | SPC m t b | run tests of current buffer                          |             |
+  | SPC m t q | run ert                                              |             |
+  | SPC m d m | open macrostep transient-state                       |             |
 
 - [emacs-lisp](https://www.spacemacs.org/layers/+lang/emacs-lisp/README.html)
-
 
 ## Keybinding I use
 
@@ -103,41 +107,43 @@ Here is the list of things that I change
 | list-faces-display                           | This will give you the current faces color search (e.g., yank)          |
 | treemacs-display-current-project-execlusivly | This command will narrow down the treemacs to current project directory |
 | `<leader>zx`                                 | Font zoom (increase/decrease)                                           |
+| `<leader>tL`                                 | toggle truncate lines RET   (unwrap lines)                              |
+| `<leader>tl`                                 | toggle line break (unwrap lines)                                        |
 |                                              |                                                                         |
 
 
 ## How to use the LSP
+
 After accessing the `lsp` for the specialized programming language, you can use
 either `,` or `<leader>m` (e.g., my leader is mapped to `SPAC`) you can find at
 `~/.emacs.d/layers/+lang/common-lisp/README.org` more details to deal with the
 `LSP` features.
 
-| Key binding   | Description                                               |
-| ------------- | --------------------------------------------------------- |
-| ~SPC m h a~   | SLIME apropos                                             |
-| ~SPC m h d~   | Disassemble symbol at point                               |
-| ~SPC m h h~   | Describe symbol at point                                  |
-| ~SPC m h i~   | Inspect definition                                        |
-| ~SPC m h H~   | Hyperspec lookup symbol at point                          |
-| ~SPC m h p~   | Browse apropos results for a package's exported symbols   |
-| ~SPC m h t~   | Toggle tracing of the function at point                   |
-| ~SPC m h T~   | Untrace all functions                                     |
-| ~SPC m h <~   | Show all known callers                                    |
-| ~SPC m h >~   | Show all known callers                                    |
-| ~SPC m h m~   | Show all usages of a macro                                |
-| ~SPC m h r~   | Show references to global variable                        |
-| ~SPC m h s~   | Show all methods specialized on a class                   |
-
+| Key binding | Description                                             |
+| ----------- | ------------------------------------------------------- |
+| ~SPC m h a~ | SLIME apropos                                           |
+| ~SPC m h d~ | Disassemble symbol at point                             |
+| ~SPC m h h~ | Describe symbol at point                                |
+| ~SPC m h i~ | Inspect definition                                      |
+| ~SPC m h H~ | Hyperspec lookup symbol at point                        |
+| ~SPC m h p~ | Browse apropos results for a package's exported symbols |
+| ~SPC m h t~ | Toggle tracing of the function at point                 |
+| ~SPC m h T~ | Untrace all functions                                   |
+| ~SPC m h <~ | Show all known callers                                  |
+| ~SPC m h >~ | Show all known callers                                  |
+| ~SPC m h m~ | Show all usages of a macro                              |
+| ~SPC m h r~ | Show references to global variable                      |
+| ~SPC m h s~ | Show all methods specialized on a class                 |
 
 ## Pacakges to be installed
 
-| idex   | Package name                | Package Description                      | website                                                                                              |
-| ------ | --------------              | ---------------------                    | ----------------------------------------------------                                                 |
-| 1      | all-the-icons               | For installing all the icons of netree   | [link](https://github.com/domtronn/all-the-icons.el)                                                 |
-| 2      | doom-themes                 | Many themese for my current workflow     | [link](https://github.com/doomemacs/themes)                                                          |
-| 3      | all-the-icons-install-fonts | For the font supporting the icons        | [link](https://github.com/domtronn/all-the-icons.el)                                                 |
-| 4      | `tabnine`                   | For allowing `tabnine` AI code assistance| [link](https://github.com/TommyX12/company-tabnine)                                                  |
-| 5      | brew install aspell         | It will allow auto-spell to work         | [link](https://stackoverflow.com/questions/19022015/emacs-on-mac-os-x-how-to-get-spell-check-to-work)|
+| idex | Package name                | Package Description                       | website                                                                                               |
+| ---- | --------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| 1    | all-the-icons               | For installing all the icons of netree    | [link](https://github.com/domtronn/all-the-icons.el)                                                  |
+| 2    | doom-themes                 | Many themese for my current workflow      | [link](https://github.com/doomemacs/themes)                                                           |
+| 3    | all-the-icons-install-fonts | For the font supporting the icons         | [link](https://github.com/domtronn/all-the-icons.el)                                                  |
+| 4    | `tabnine`                   | For allowing `tabnine` AI code assistance | [link](https://github.com/TommyX12/company-tabnine)                                                   |
+| 5    | brew install aspell         | It will allow auto-spell to work          | [link](https://stackoverflow.com/questions/19022015/emacs-on-mac-os-x-how-to-get-spell-check-to-work) |
 
 ## Types of shells in Emacs
 
@@ -146,8 +152,8 @@ either `,` or `<leader>m` (e.g., my leader is mapped to `SPAC`) you can find at
 3. `ansi-shell`
 4. `vterm` (my favorite)
 
-
 ## How to change the color of specific element in Emacs
+
 I followed the description from the `Chat-GPT`. In `spacemacs`, you can change the
 color of strings by modifying the syntax highlighting for the relevant
 programming language mode. Here are the general steps you can follow:
@@ -168,7 +174,6 @@ programming language mode. Here are the general steps you can follow:
   - `string` change the string in `Emacs`
   - `variable-name-face` to change the variable names in emacs.
 
-
 ```emacs-lisp
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -186,12 +191,12 @@ programming language mode. Here are the general steps you can follow:
  )
 
 ```
+
 - Some highlights is not possible for that you can use `customize-face` like the
   one I encoutered with when I used the `markdown` elements to get them
   correctly
 
-
-## Language servers  and layers
+## Language servers and layers
 
 ```emacs-lisp
      ;; Languages
@@ -253,6 +258,7 @@ programming language mode. Here are the general steps you can follow:
                                ;; :powerline-offset 1.3
                                )
 ```
+
 ## Other configurations
 
 ```emacs-lisp
@@ -306,12 +312,17 @@ before packages are loaded."
 )
 
 ```
+
 ## From Scratch
+
 I followed the configurations mentioned in the following thread
+
 - [Emacs from Scratch](https://github.com/daviwil/emacs-from-scratch/blob/3075158cae210060888001c0d76a58a4178f6a00/init.el)
 
 ## Configurations wiht DOOM Emacs
+
 But before you doom yourself, here are some things you should know:
+
 1. Do not forget to run 'doom sync', then restart Emacs, after modifying init.el
    or packages.el in ~/.config/doom.
    This command ensures needed packages are installed, orphaned packages are
@@ -322,4 +333,4 @@ But before you doom yourself, here are some things you should know:
 3. Use 'doom upgrade' to update Doom. Doing it any other way will require
    additional steps. Run 'doom help upgrade' to understand those extra steps.
 4. Access Doom's documentation from within Emacs via 'SPC h d h' or 'C-h d h'
-    (or 'M-x doom/help')
+   (or 'M-x doom/help')

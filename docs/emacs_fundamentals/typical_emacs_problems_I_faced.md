@@ -1,8 +1,11 @@
 # Problems with Emacs
 
 ## Faced Issues
-Below the problems that I faced with my current
-| idx | problem type | Description                                                               | recovered                                                                                    |
-|-----|--------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
-| 1   | pdf-tools    | when I highlight a setence for any pdf it will keep on shutdown spacemacs | remove from the `elpa` the pdf-tools and reinstall it again (rebuild to my current computer) |
-| 2   | org-mode     | face a problem that org-mode is not working and no syntax highlighting    | remove from the `elpa` the org-mode and let it to be installed again.                        |
+Below are the issues I encountered with my current setup:
+
+1. `pdf-tools`: When I try to highlight text in any PDF, Spacemacs suddenly shuts
+   down. To address this problem, I removed pdf-tools from my `elpa` package
+   list and reinstalled it again on my current computer (rebuild).
+2. `org-mode`: Org-mode is not working as expected and there's no syntax
+   highlighting. In order to fix this, I also removed org-mode from my `elpa`
+   package list and installed it anew.

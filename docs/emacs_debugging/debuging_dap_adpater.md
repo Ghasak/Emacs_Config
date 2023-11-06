@@ -1,44 +1,52 @@
 # Debugging and Dap Adpater
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Debugging and Dap Adpater](#debugging-and-dap-adpater)
-    - [ChangeLog](#changelog)
-    - [Content](#content)
-        - [Using Emacs](#using-emacs)
-            - [Steps for Debugging in Emacs](#steps-for-debugging-in-emacs)
-        - [Using Terminal](#using-terminal)
-            - [Steps in lldb](#steps-in-lldb)
-        - [Current workflow for investigate variables](#current-workflow-for-investigate-variables)
-        - [Using Nvim](#using-nvim)
-        - [Using vscode](#using-vscode)
-    - [References](#references)
+  - [ChangeLog](#changelog)
+  - [Content](#content)
+    - [Using Emacs](#using-emacs)
+      - [Steps for Debugging in Emacs](#steps-for-debugging-in-emacs)
+    - [Using Terminal](#using-terminal)
+      - [Steps in lldb](#steps-in-lldb)
+    - [Current workflow for investigate variables](#current-workflow-for-investigate-variables)
+    - [Using Nvim](#using-nvim)
+    - [Using vscode](#using-vscode)
+  - [References](#references)
 
 <!-- markdown-toc end -->
 
 ## ChangeLog
--  `Fir Jun 23 15:19` : Success in installing `dap` for `C++` and `Rust`.
+
+- `Fir Jun 23 15:19` : Success in installing `dap` for `C++` and `Rust`.
 
 ## Content
+
 The following is not for `Rust` execlusivly, you still can use same for
 `C/C++`, `Objective-C` ..etc.
 
-
 ### Using Emacs
+
 In Emacs (`spacemacs`) We need to provide three things
+
 1. `dap-mode` (Assume You already have installed the `dap-mode` for your `spacemacs`)
 2. `dap-adapter` : Where the dap adpater is installed (current we use `lldb-mi` which works flawlessly for `c++`,`rust`)
 3. `template`: We will explain about this later.
 
 #### Steps for Debugging in Emacs
+
 1. Run the command `dap-gdb-lldb-setup`, this will work if you are in any `Rust` project.
 2. Ensure you have `dap-mi` install in your home directory, I use the following by adding it to my `.zshrc`.
+
 ```zsh
 export PATH="$PATH:$HOME/.vscode/extensions/ms-vscode.cpptools-1.15.4-darwin-arm64/debugAdapters/lldb-mi/bin/"
 ```
+
 3. Then create your template
 
-```
+```elisp
 (dap-register-debug-template
   "LLDB::Run"
   (list :type "lldb-mi"
@@ -47,7 +55,9 @@ export PATH="$PATH:$HOME/.vscode/extensions/ms-vscode.cpptools-1.15.4-darwin-arm
         :target nil
         :cwd nil))
 ```
-4. Run the debugging assume you already setted a `breakpoint** at the place you want to debug.
+
+4. Run the debugging assume you already setted a `breakpoint` at the place you want to debug.
+
 - **NOTE** If you are running a `CPP` project, I couldn't success in making the
   `lldb-vscode` to work, instead I run first any `Rust` project to make the
   `LLDB` or `LLDB-CONFIG` (these both templates that work) to be loaded first
@@ -74,7 +84,7 @@ We are using `lldb-1403.0.17.64 Apple Swift version 5.8 (swiftlang-5.8.0.124.2 c
 debugging.
 
 1. Build your solution for latest code changes, deployed using `cargo run` or `cargo-watch -c -x run --quiet`
-2. At the root directory of our `Crate`,  We run in terminal session the command `lldb`.
+2. At the root directory of our `Crate`, We run in terminal session the command `lldb`.
 3. Run the target inside the `lldb` using
 
 - Current executable set to `lldb-mi` (M1-arm64), which I found it the best option since I don't have the `gdp` for the macOS.
@@ -283,3 +293,4 @@ version `lldb version 16.0.0-custom rust-enabled`
 - [Referenc_05](https://www.youtube.com/watch?v=2GV0K9Y2MKA)
 - [Referenc_06](https://www.youtube.com/watch?v=S3TB2pDOEWY)
 - [Debugging, Printing and logging](https://learn.udacity.com/courses/ud774)
+- [dap-mode](https://emacs-lsp.github.io/dap-mode/page/configuration/#vscode-cpptools)
