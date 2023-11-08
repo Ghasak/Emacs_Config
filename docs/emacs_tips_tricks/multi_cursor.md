@@ -1,10 +1,14 @@
 # Multi Cursor in Emacs
 
-There two multi-cursor engine running behind the scenes of the layer `multiple-cursors`: "mc" and "evil-mc." The former, "mc," represents the "multi-cursor" layer, while the latter, "evil-mc," stands for the "multi-cursor in evil model".
+There two multi-cursor engine running behind the scenes of the layer
+`multiple-cursors`: "mc" and "evil-mc." The former, "mc," represents the
+"multi-cursor" layer, while the latter, "evil-mc," stands for the "multi-cursor
+in evil model".
 
 ## Running the Mutlicursor `MC`
 
-I to use the `mc` engine rather than the `evil-mc` because it offers a numbering feature that I could not find in `evil-mc`. Let's examine its capabilities.
+I to use the `mc` engine rather than the `evil-mc` because it offers a numbering
+feature that I could not find in `evil-mc`. Let's examine its capabilities.
 
 1. We can select here the similar instance in number of ways,
 

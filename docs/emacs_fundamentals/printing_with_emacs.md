@@ -1,9 +1,11 @@
 # How to Print
+
 Usually I have found there is a command called `mac-print-frame-dailog` that
 will open the `mac` dialog for selecting and exporting the document and print
 it. (As for now I canot figure out the margins).
 
 ## PDF formula
+
 I found there is a good way to print as pdf based on the following `Emacs lisp`
 function
 

@@ -9,3 +9,10 @@ can use the `shell-command` faster
 ```elisp
 cd .. && python -m src.main
 ```
+
+- Or, for your give project, you can use the `projectile` using `<leader> p c`
+  then we can specify the command to pass such as:
+
+```sh
+python -m src.main
+```

@@ -1,27 +1,35 @@
 # How to input number -series (with appointed amount) in Emacs?
 
-
 - You can also invoke eval-expression (M-:) and evaluate
-```elisp
-(dotimes (i 4) (insert (format "%2d.\n" (1+ i))))
-```
-or
+
+- The formula:
 
 ```elisp
 (dotimes (i SEQ_LENGTH) (insert (format "%2d\n" (+ START (* i STEP)))))
 ```
+
+- Example:
+
+```elisp
+(dotimes (i 4) (insert (format "%2d.\n" (1+ i))))
+```
+
 ## Using Regular Expression
+
 1. in visual mode, select many lines
 2. `<leader> <leader>` then `replace-regexp`
-3. use `^`  (to alter beginning of a line)
+3. use `^` (to alter beginning of a line)
 4. replaced by `\,(1+ \#)` put a sequence of number
 
 ## Using multiple-cursors layer
 
-This is a bit tricky, You have the option to create `multiple cursor` and
-there are two back-ends. First the `'evil-mc` and `'mc`. I found that `mc`
-is not powerful as the `evil-mc` (the `evil-mc` uses the `gr` keybinding).
-the `mc` however has the `mc/insert-numbers`.
+First you should be sure to use, (mc not mc-evil) engine, as the former offer
+the `mc/insert-numbers`, I mapped it to `C-c i n`. as for `i: insert -> n: number`.
+
+- This is a bit tricky, You have the option to create `multiple cursor` and
+  there are two back-ends. First the `'evil-mc` and `'mc`. I found that `mc`
+  is not powerful as the `evil-mc` (the `evil-mc` uses the `gr` keybinding).
+  the `mc` however has the `mc/insert-numbers`.
 
 1. First allow the layer `multiple-curosrs` layer to be installed in
    `spacemacs`.
@@ -30,6 +38,7 @@ the `mc` however has the `mc/insert-numbers`.
 ```elisp
  (multiple-cursors :variables multiple-cursors-backend 'mc)
 ```
+
 3. Now you need first create several cursor to select how many numbers you want
    to have sequence for. The `mc` back-end is mapped with `<leader>s m` as of
    search multiple-lines. Now you have the option to create cursors using
@@ -48,7 +57,9 @@ the `mc` however has the `mc/insert-numbers`.
   - Then, you can back to one cursor using either `mc/keyboard-quit` or `ctrl + g` (C-g) to exit the `mc` mode.
 
 ## Can We use Multip-cursor with dired
+
 Yes, you can, as
+
 1. Enter the dired file manager first at the directory you want to change the
    file names.
 2. Now, you can enter the edit mode for the dired window using `<leader> b w`
@@ -59,14 +70,16 @@ Yes, you can, as
    occurrences).
 
 ## Using Macro
+
 This is simple method that I found [read more here](./docs/emacs_tips_tricks/macros.md)
+
 - Put your cursor at given position and press `F3`.
 - Then insert mode, and push enter to go to next line.
-- exit the ensert mode and use `F3` to close,
-
-
+- exit the ensert mode and use `F3` to close.
+- To repeat the last macro use the `F4`.
 
 ## References
+
 - [How to input series of numbers](https://emacs.stackexchange.com/questions/5632/how-to-input-number-series-with-appointed-amount-in-emacs)
 - [How to increment a series of number on the same row](https://stackoverflow.com/questions/16921013/how-to-increment-a-serie-of-number-on-the-same-row-in-a-configuration-file)
 - [How to insert a number sequence in Emacs with multiple cursors?](https://stackoverflow.com/questions/29838244/how-to-insert-a-number-sequence-in-emacs-with-multiple-cursors)

@@ -109,6 +109,7 @@ Here is the list of things that I change
 | `<leader>zx`                                 | Font zoom (increase/decrease)                                           |
 | `<leader>tL`                                 | toggle truncate lines RET   (unwrap lines)                              |
 | `<leader>tl`                                 | toggle line break (unwrap lines)                                        |
+| `<leader>fy`                                 | toggle services to copy file name, file path in dired or any buffer     |
 |                                              |                                                                         |
 
 

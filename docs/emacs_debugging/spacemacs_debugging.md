@@ -107,6 +107,7 @@ sudo apt-get install libvterm-bin
 ```shell
 ln -s /Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi /usr/local/bin/lldb-mi
 ```
+
 3. From vscode natively from vscode as I used above (located at)
 
 ```shell
@@ -127,23 +128,24 @@ ln -s /Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi /usr/local/bin/
 ```
 
 - Later on, I was able to successfully utilize it by running the command
-`dap-debug-edit-template` first. However, before doing so, you will notice that
-I am using the **lldb-mi** extension from the `cpptools` package installed via
-`mason` from: `~/.local/share/nvim/mason/packages/cpptools/extension`. Any
-`lldb-mi` should work fine for debugging in `spacemacs`.
-
+  `dap-debug-edit-template` first. However, before doing so, you will notice that
+  I am using the **lldb-mi** extension from the `cpptools` package installed via
+  `mason` from: `~/.local/share/nvim/mason/packages/cpptools/extension`. Any
+  `lldb-mi` should work fine for debugging in `spacemacs`.
 
 ### vscode-cpptools
 
 Installation, You only need to run dap-cpptools-setup to setup automatically and
 then you are good start debugging.
+
 - Clone and follow the instructions to compile lldb-vscode from
   <https://github.com/llvm/llvm-project/tree/main/lldb/tools/lldb-vscode>
 - Put in your emacs configuration.
 
-    ``` elisp
-    (require 'dap-cpptools)
-    ```
+  ```elisp
+  (require 'dap-cpptools)
+  ```
+
 - Usage `dap-debug-edit-template` and select template `cpptools` prefixed configuration.
 
 1. Use `dap-debug-edit-tempate`, to add the adapter, and evalute the buffer
@@ -162,6 +164,7 @@ then you are good start debugging.
         :program "${workspaceFolder}/build/debug/main"  ;; Refere to your binary here
         :cwd "${workspaceFolder}"))
 ```
+
 - You can also make the directory relative, using:
 
 ```lisp
@@ -175,6 +178,106 @@ then you are good start debugging.
        :program "${workspaceFolder}/build/debug/main"  ;; Refer to your binary here
        :cwd "${workspaceFolder}"))
 ```
+
+- I also found that we can pass the
+  `${workspaceFolder}/build/debug/${fileBasenameNoExtension}`, which will give
+  is exactly the `main`, without specifying the binary name, this is super handy
+  feature, and configure your adpater more efficiently.
+
+```json
+{
+  "configurations": [
+    {
+      "type": "lldb-vscode",
+      "request": "launch",
+      "name": "C++ LLDB json default",
+      "program": "${workspaceFolder}/debug/${fileBasenameNoExtension}",
+      "cwd": "${workspaceFolder}",
+      "args": []
+    }
+  ]
+}
+```
+
+## Comment by reddit users
+
+I was also struggling with this recently and I think the main difficulty for me
+was that there are different debug programs that require different
+configurations. It took also way longer than it should have to figure out how to
+tell the debugger which file to debug and how to pass command-line arguments.
+Here is my setup. First the relevant part from .emacs.d/init.el. Second, the
+file .emacs.d/default-launch.json. As you can see from the config, I use
+lldb-vscode, which is installed under /usr/bin/lldb-vscode.
+
+```elisp
+
+(use-package dap-mode
+  :defer
+  :custom
+  (dap-auto-configure-mode t                           "Automatically configure dap.")
+  (dap-auto-configure-features
+   '(sessions locals breakpoints expressions tooltip)  "Remove the button panel in the top.")
+  :config
+  ;;; dap for c++
+  (require 'dap-lldb)
+
+  ;;; set the debugger executable (c++)
+  (setq dap-lldb-debug-program '("/usr/bin/lldb-vscode"))
+
+  ;;; ask user for executable to debug if not specified explicitly (c++)
+  (setq dap-lldb-debugged-program-function (lambda () (read-file-name "Select file to debug.")))
+
+  ;;; default debug template for (c++)
+  (dap-register-debug-template
+   "C++ LLDB dap"
+   (list :type "lldb-vscode"
+         :cwd nil
+         :args nil
+         :request "launch"
+         :program nil))
+
+  (defun dap-debug-create-or-edit-json-template ()
+    "Edit the C++ debugging configuration or create + edit if none exists yet."
+    (interactive)
+    (let ((filename (concat (lsp-workspace-root) "/launch.json"))
+	  (default "~/.emacs.d/default-launch.json"))
+      (unless (file-exists-p filename)
+	(copy-file default filename))
+      (find-file-existing filename))))
+
+{
+    "configurations": [
+	{
+	    "type": "lldb-vscode",
+	    "request": "launch",
+	    "name": "C++ LLDB json default",
+	    "program": "${workspaceFolder}/debug/${fileBasenameNoExtension}",
+	    "cwd": "${workspaceFolder}",
+	    "args": [],
+	}
+    ]
+}
+```
+
+- With this I have two ways to debug stuff. The first has no overhead and just
+  asks me for the executable to debug. The second is based on a config file for
+  the current project that also lets me specify command line arguments.
+
+- The workflow for option 1 is as follows:
+  - I run dab-debug and choose "C++ LLDB dap". It then asks me for a file, where
+    I select the executable I want to debug. That's it; the debugger starts
+    (make sure to set a breakpoint before, otherwise the debugger might finish
+    before you notice).
+- The workflow for option 2 is as follows:
+  - Within my project, I call dap-debug-create-or-edit-json-template, which
+    copies my default launch.json to the project root and opens it, so I can edit it
+    (or it just opens it, if it already exists). Then, when running dap-debug, I can
+    choose the configuration specified in launch.json (the name of my default
+    configuration is "C++ LLDB json default"). In the default configuration, it
+    starts to debug the program depending on the file of the current buffer. So lets
+    say my buffer is program.cpp, then the debugger will debug the executable
+    {workspace root}/debug/program. Also, I can add command line arguments to the
+    call by adding them to the "args" field. Hope this helps.
 
 ## Debugging for Python
 
