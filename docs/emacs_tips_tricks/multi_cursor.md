@@ -25,3 +25,53 @@ feature that I could not find in `evil-mc`. Let's examine its capabilities.
 - The one I use always is, `mark-all-dwim` makr all in (do what I mean).
 - `ESC`: is after selecting the similar instances to set your cursor on these occurences.
 - `C-g` is to quite the mulicursor mode
+
+
+
+## Performance Tip from Emacs Rock
+
+```elisp
+C-æ mc/mark-next-like-this
+```
+- Find and mark the next part of the buffer matching the currently active
+  region, while also keeping the current region. Get it here.
+
+```elisp
+C-x r y yank-rectangle
+```
+- Yank the last killed rectangle with upper left corner at point.
+
+```elisp
+H-SPC set-rectangular-region-anchor
+```
+- Think of this one as `set-mark` except you're marking a rectangular region. It
+  is an exceedingly quick way of adding multiple cursors to multiple lines. Get
+  it here.
+
+```elisp
+C-x C-q dired-toggle-read-only
+```
+- Edit dired buffer with Wdired, or set it read-only.
+
+```elisp
+C-Æ mc/mark-all-like-this
+```
+- Find and mark all parts of the buffer matching the currently active region,
+  while also keeping the current region. Get it here.
+
+```
+C-x C-e eval-and-replace
+```
+- Evaluate the last sexp and replace it with the result. Get it here.
+
+```
+M-x kmacro-name-last-macro
+```
+- Assign a name to the last keyboard macro defined.
+```
+M-x insert-kbd-macro
+```
+Insert in buffer the definition of kbd macro NAME, as Lisp code.
+
+## Reference
+- [EmacsRocks](https://emacsrocks.com/e13.html)

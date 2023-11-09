@@ -143,7 +143,7 @@ executed with ~M-m~ in Emacs mode.
 "Open with", open file in buffer with external app.
 Source: http://emacsredux.com/blog/2013/03/27/open-file-in-external-program/
 
-```closure
+```elisp
 (defun open-with (arg)
   "Open visited file in default external program.
 

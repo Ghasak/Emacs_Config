@@ -24,12 +24,12 @@ The current Configurations that I am working on are based on the pre-built
 `Emacs` version from [here](https://github.com/d12frosted/homebrew-emacs-plus#no-titlebar).
 
 1. Remove the previous `Emacs` installed on your system
-- I have removed the full functioning version called `emacs-port`
-- Stopping the `emacs-server` using `pgrep -u "$USER" -x Emacs`
-- Checking nothing running in background using `pgrep -u "$USER" -x Emacs`.
-- Now the version is already being removed. here, the information about the old version.
-- Removing the `emacs` is done using `brew list | grep emacs` to know the name of my current version
-- The running version is called `emacs-mac-spacemacs-icon`, so we can use `brew remove emacs-mac-spacemacs-icon`.
+  - I have removed the full functioning version called `emacs-port`
+  - Stopping the `emacs-server` using `pgrep -u "$USER" -x Emacs`
+  - Checking nothing running in background using `pgrep -u "$USER" -x Emacs`.
+  - Now the version is already being removed. here, the information about the old version.
+  - Removing the `emacs` is done using `brew list | grep emacs` to know the name of my current version
+  - The running version is called `emacs-mac-spacemacs-icon`, so we can use `brew remove emacs-mac-spacemacs-icon`.
 
 ```shell
 GNU Emacs 28.2

@@ -7,8 +7,6 @@ You need to put the following in your `.spacemacs`
 (add-hook 'yas-minor-mode-hook (lambda ()
                              yas-activate-extra-mode 'fundamental-mode))
 ```
-
-
 The following directories are added by default:
 
 ~/.emacs.d/elpa/yasnippet-xxxxx/snippets

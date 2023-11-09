@@ -16,6 +16,12 @@
 <!-- markdown-toc end -->
 
 ## Configurations
+### Important Pre-installation
+
+1. For Rust, I use "dap-gdb-lldb-setup" to install lldb for debugging Rust or C/C++
+   projects.
+2. For C/C++, you can also use "dap-cpptools-setup" to install the
+   necessary debugger adapter.
 
 One of the features that I wished for, was to integrated the `debugging` and
 make the `dap` and `lsp` layers both work. After I finished the installation by
@@ -114,7 +120,7 @@ ln -s /Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi /usr/local/bin/
 ~/.vscode/extensions/ms-vscode.cpptools-1.14.5-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi)
 ```
 
-## Using CPPTOOLS
+## Using Cpptools
 
 - [configure lldb-mi with doom emacs](https://github.com/emacs-lsp/lsp-mode/issues/2928)
 
@@ -199,7 +205,7 @@ then you are good start debugging.
 }
 ```
 
-## Comment by reddit users
+### Comment by reddit users
 
 I was also struggling with this recently and I think the main difficulty for me
 was that there are different debug programs that require different
@@ -257,6 +263,17 @@ lldb-vscode, which is installed under /usr/bin/lldb-vscode.
 	}
     ]
 }
+
+```
+
+- Or, we can also use the following (check for further information [here](https://code.visualstudio.com/api/extension-guides/debugger-extension))
+
+```
+"program": {
+        "type": "string",
+        "description": "Absolute path to a text file.",
+        "default": "${workspaceFolder}/${command:AskForProgramName}"
+         },
 ```
 
 - With this I have two ways to debug stuff. The first has no overhead and just
@@ -279,6 +296,7 @@ lldb-vscode, which is installed under /usr/bin/lldb-vscode.
     {workspace root}/debug/program. Also, I can add command line arguments to the
     call by adding them to the "args" field. Hope this helps.
 
+
 ## Debugging for Python
 
 To be written later (Now I am using python `debugpy` which works very fine!).
@@ -296,3 +314,5 @@ To be written later (Now I am using python `debugpy` which works very fine!).
 - [Emacs Debug with GDB](https://www.youtube.com/watch?v=X70OjYLUpEk&t=455s)
 - [dap-mode configurations](https://emacs-lsp.github.io/dap-mode/page/configuration/)
 - [vscode-cpptools](https://emacs-lsp.github.io/dap-mode/page/configuration/#vscode-cpptools)
+- [emacs-lsp](https://emacs-lsp.github.io/dap-mode/page/configuration/)
+- [debuggin wiht ldb](https://www.hiroakit.com/archives/1966)
