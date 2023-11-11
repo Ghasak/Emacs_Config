@@ -120,11 +120,12 @@ you determine which group to allow permission, these below the one I used.
   - Org mode has a probelmm wiht aligned text and
   - The check-boxes will reseted not by the icons I specified.
   - The header which replaced the title-bar will have a different color
+  - Environment variable will not have enought time to read them, for example my C++ projects.
 - Given all these, Instead, I decided to run the emacs manually the server using the
   following command (you need to run this command only once, which will run in background by passing & ).
 
 ```sh
-alias myemacs="/opt/homebrew/bin/emacsclient -n -c --socket-name=server_ghasak_01 -a 'emacs' ~/. &"
+alias myemacs="/opt/homebrew/bin/emacs --daemon=server_ghasak_01 &"
 ```
 
 - Then, later I just need to second part, which means that we run `emacsclient` using the `command + e`.
@@ -167,4 +168,7 @@ kill -9 $(ps aux | grep Emacs | grep -v grep | awk '{print $2}')
 
 ```sh
  socket_file=$(lsof -c Emacs | grep server | tr -s " " | cut -d' ' -f8) && echo $socket_file
+
 ```
+3. You can kill the loggin server first and then run manually the server using
+   `myemacs` command as we mentioned. So, this way, you can have both method.
