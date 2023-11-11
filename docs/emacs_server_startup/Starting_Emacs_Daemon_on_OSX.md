@@ -13,8 +13,10 @@ haven't already. It is amazing.
 
 ## Install Cocoa Emacs
 
-    brew install emacs --cocoa
-    open $(brew --prefix)/Cellar/emacs/HEAD/
+```sh
+brew install emacs --cocoa
+open $(brew --prefix)/Cellar/emacs/HEAD/
+```
 
 Drag the Emacs Application to your Applications folder
 
@@ -22,9 +24,11 @@ Drag the Emacs Application to your Applications folder
 
 Open the AppleScript editor and paste the following:
 
->     tell application "Terminal"
->     do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
->     endtell
+```applescript
+     tell application "Terminal"
+     do shell script "/Applications/Emacs.app/Contents/MacOS/Emacs --daemon"
+     endtell
+```
 
 Save this as an Application called "Emacs Daemon" in your Applications folder
 
@@ -32,19 +36,21 @@ Save this as an Application called "Emacs Daemon" in your Applications folder
 
 Goto `System Preferences > Accounts`
 
-* With your user name selected, click on the `Login Items` tab
-* Click on the plus sign
-* Browse to your applications folder and find "Emacs Daemon"
-* Don't worry about the "hide" checkbox, since it the dock icon disappears
+- With your user name selected, click on the `Login Items` tab
+- Click on the plus sign
+- Browse to your applications folder and find "Emacs Daemon"
+- Don't worry about the "hide" checkbox, since it the dock icon disappears
   naturally
 
 ## Create the client application
 
 Open the AppleScript editor and paste the following:
 
->     tell application "Terminal"
->     do shell script "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
->     endtell
+```applescript
+tell application "Terminal"
+do shell script "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
+endtell
+```
 
 Save this as an Application called "Emacs Client" in your Applications folder.
 
@@ -60,13 +66,13 @@ and rename `Emacs.icns` to `applet.icns` in the Emacs Client application.
 
 ### Hiding the dock icon for Emacs while Emacs Client is running
 
-* Again, navigate to your Application folder and right click on your Emacs
+- Again, navigate to your Application folder and right click on your Emacs
   application (not the client or daemon), and click on `Show Package Contents`
-* Open the `Info.plist` using the Propertly List Editor
-* Click `Add Child`
-* Set the key `NSUIElement`
-* Set the value to `1`
-
+- Open the `Info.plist` using the Propertly List Editor
+- Click `Add Child`
+- Set the key `NSUIElement`
+- Set the value to `1`
 
 ## Reference
+
 - [How to start Emacs Daemon Server in macOS](https://gist.githubusercontent.com/redinger/1394910/raw/c0dc6877c158a13760212dbe10b4abb32ae3c4f8/Emacs.md)

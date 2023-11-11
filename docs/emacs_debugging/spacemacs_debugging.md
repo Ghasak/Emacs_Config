@@ -1,27 +1,48 @@
 # Debugging with Spacemacs
 
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [Debugging with Spacemacs](#debugging-with--spacemacs)
-  - [Configurations](#configurations)
-  - [Adpater setup for Rust](#adpater-setup-for-rust)
-  - [Rust debugging steps](#rust-debugging-steps)
-  - [Where can I find `lldb-mi`](#where-can-i-find-lldb-mi)
-  - [Using CPPTOOLS](#using-cpptools)
-  - [Debugging for Python](#debugging-for-python)
-  - [References](#references)
+- [Debugging with Spacemacs](#debugging-with-spacemacs)
+    - [Configurations](#configurations)
+        - [Important Pre-installation](#important-pre-installation)
+    - [Adpater setup for Rust](#adpater-setup-for-rust)
+    - [Rust debugging steps](#rust-debugging-steps)
+    - [Where can I find `lldb-mi`](#where-can-i-find-lldb-mi)
+    - [Using Cpptools](#using-cpptools)
+        - [vscode-cpptools](#vscode-cpptools)
+        - [Comment by reddit users](#comment-by-reddit-users)
+    - [Debugging for Python](#debugging-for-python)
+    - [References](#references)
 
 <!-- markdown-toc end -->
 
 ## Configurations
+
 ### Important Pre-installation
 
 1. For Rust, I use "dap-gdb-lldb-setup" to install lldb for debugging Rust or C/C++
    projects.
 2. For C/C++, you can also use "dap-cpptools-setup" to install the
    necessary debugger adapter.
+3. For any adapter it is better to define it as a simylink at /usr/local/bin/
+
+```sh
+ln -s  /Users/gmbp/.vscode/extensions/
+       ms-vscode.cpptools-1.17.5-darwin-arm64/
+       debugAdapters/lldb-mi/bin/lldb-mi /usr/local/bin/
+```
+
+```sh
+
+which lldb-mi
+lldb-mi is /usr/local/bin/lldb-mi
+lldb-mi is /usr/local/bin/lldb-mi
+lldb-mi is /Users/gmbp/.vscode/extensions
+           /ms-vscode.cpptools-1.17.5-darwin-arm64
+           /debugAdapters/lldb-mi/bin/lldb-mi
+```
 
 One of the features that I wished for, was to integrated the `debugging` and
 make the `dap` and `lsp` layers both work. After I finished the installation by
@@ -184,6 +205,20 @@ then you are good start debugging.
        :program "${workspaceFolder}/build/debug/main"  ;; Refer to your binary here
        :cwd "${workspaceFolder}"))
 ```
+- I also built the `llvm` project from scratch and I also built the `lldb-mi` based on the `llvm` built and I refer to the same adapter using
+
+```lisp
+(dap-register-debug-template
+ "cpptools::Run Configuration-GHASAKNEW"
+ (list :type "cppdbg"
+       :request "launch"
+       :name "cpptools::Run Configuration"
+       :miDebuggerPath (expand-file-name "buildspace/lldb-mi/build/src/lldb-mi" "~")
+       :MIMode "gdb"
+       :program "${workspaceFolder}/build/debug/${fileBasenameNoExtension}"  ;; Refer to your binary here
+       :cwd "${workspaceFolder}"))
+```
+
 
 - I also found that we can pass the
   `${workspaceFolder}/build/debug/${fileBasenameNoExtension}`, which will give
@@ -268,12 +303,47 @@ lldb-vscode, which is installed under /usr/bin/lldb-vscode.
 
 - Or, we can also use the following (check for further information [here](https://code.visualstudio.com/api/extension-guides/debugger-extension))
 
-```
+```json
 "program": {
         "type": "string",
         "description": "Absolute path to a text file.",
         "default": "${workspaceFolder}/${command:AskForProgramName}"
          },
+```
+
+
+- Here, is another launch.json for vscode
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "clang++ - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: clang++ build active file",
+            "miDebuggerPath": "/usr/bin/lldb"
+        }
+    ]
+}
 ```
 
 - With this I have two ways to debug stuff. The first has no overhead and just
@@ -296,7 +366,6 @@ lldb-vscode, which is installed under /usr/bin/lldb-vscode.
     {workspace root}/debug/program. Also, I can add command line arguments to the
     call by adding them to the "args" field. Hope this helps.
 
-
 ## Debugging for Python
 
 To be written later (Now I am using python `debugpy` which works very fine!).
@@ -316,3 +385,4 @@ To be written later (Now I am using python `debugpy` which works very fine!).
 - [vscode-cpptools](https://emacs-lsp.github.io/dap-mode/page/configuration/#vscode-cpptools)
 - [emacs-lsp](https://emacs-lsp.github.io/dap-mode/page/configuration/)
 - [debuggin wiht ldb](https://www.hiroakit.com/archives/1966)
+- [lldb-debugging-with-cpp-linux](https://stackoverflow.com/questions/63978029/setup-lldb-debugging-with-cpp-extension-in-vscode-linux)

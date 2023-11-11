@@ -32,7 +32,7 @@ I got configured `Spacemacs` to handle if there is no server running, then run
 one (called server) the socket is located of course at same directory (for macOS
 ARM 64) I use
 
-```shell
+```sh
 /var/folders/3j/p9vdk4jd065g5y416bvbj4fh0000gn/T/emacs501
 ```
 
@@ -43,13 +43,13 @@ with a name `server`.
 1. If you use the version of `Emacs.app` from `brew install --cask emacs-mac-spacemacs-icon` it called (Emacs Mac Port version) from
    [here](https://github.com/railwaycat/homebrew-emacsmacport).
 
-```shell
+```sh
 pgrep -u "$USER" -x Emacs
 ```
 
 2. If you use the version of `Emacs.app` from `brew install --cask emacs`
 
-```shell
+```sh
 pgrep -u "$USER" -x Emacs-arm64-11 --bg-daemon
 ```
 

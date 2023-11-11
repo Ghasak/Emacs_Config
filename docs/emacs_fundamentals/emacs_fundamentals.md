@@ -69,50 +69,59 @@ Here is the list of things that I change
 
 ## Keybinding I use
 
-| Key binding                                  | Description                                                                        |
-|----------------------------------------------|------------------------------------------------------------------------------------|
-| `<leader>w hjkl`                             | Moving between buffers                                                             |
-| `<leader>bp`                                 | buffer previous                                                                    |
-| `<leader>bn`                                 | buffer next                                                                        |
-| `<leader>bn`                                 | buffer next                                                                        |
-| package-show-list-packages                   | `space`, `space` then write this command                                           |
-| `<leader>m`                                  | for any LSP (you can use also `,`)                                                 |
-| `helm-find-file`                             | for finding file in tree                                                           |
-| customize-create-theme                       | Creating a color theme                                                             |
-| `<leader>saf`                                | To open Ag to find file                                                            |
-| `<leader>sd`-B2 -A2 keyword                  | Find the correct keyword among many files in directory                             |
-| `::lsp-ui-imenu`                             | Will show object tree for the LSP                                                  |
-| `<leader>fed`                                | Will open SpaceEmacs buffer quickly (shortcut)                                     |
-| `<leader>fj`                                 | in any buffer you back to origin of where is the file in dried                     |
-| `<leadr>fy`                                  | This will allow to copy the file name or other features                            |
-| `<leader>a u`                                | undo-tree toggle                                                                   |
-| `<leader>w m`                                | buffer maximized                                                                   |
-| `<leader>x`                                  | So many features you can find such as c for count buffer elements                  |
-| `<leader>xgt`                                | google translate for selected words in visual mode                                 |
-| `gt and gT`                                  | with `tabs` it allows to move between tabs                                         |
-| `<leader>t`                                  | many functionality                                                                 |
-| `<leader>a w /`                              | to search in google search engine                                                  |
-| mini-map-mode                                | to toggle the minimap mode                                                         |
-| M-:`markdown-toc-generate-toc`               | this will allow you to generate table of content                                   |
-| `help-xref-interned`                         | offer help on certain function or command in emacs                                 |
-| `describe-mode`                              | describe with help for a given mode                                                |
-| `describe-key`                               | describe a keybinding                                                              |
-| `describe-face`                              | about the theme/colors in `emacs`                                                  |
-| `Rainbow Mode`                               | Activate the colors in the buffer base don the color layer.                        |
-| `open-command-log-buffer`                    | This will allow you to see the keystrokes                                          |
-| `close-command-log-buffers`                  | This will close the log-command-buffer                                             |
-| `<leader>sw`                                 | Built-in web-browser for `Emacs` , it called `eww`                                 |
-| `<leader>`                                   |                                                                                    |
-| leader b f                                   | Reveal file in OS Finder                                                           |
-| list-faces-display                           | This will give you the current faces color search (e.g., yank)                     |
-| treemacs-display-current-project-execlusivly | This command will narrow down the treemacs to current project directory            |
-| `<leader>zx`                                 | Font zoom (increase/decrease)                                                      |
-| `<leader>tL`                                 | toggle truncate lines RET   (unwrap lines)                                         |
-| `<leader>tl`                                 | toggle line break (unwrap lines)                                                   |
-| `<leader>fy`                                 | toggle services to copy file name, file path in dired or any buffer                |
-| `devdocs-search`                             | This website is dedicated to all programming languages and can seach for defintion |
-|                                              |                                                                                    |
+| Key binding                                  | Description                                                                                           |
+|----------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| `<leader>w hjkl`                             | Moving between buffers                                                                                |
+| `<leader>bp`                                 | buffer previous                                                                                       |
+| `<leader>bn`                                 | buffer next                                                                                           |
+| `<leader>bn`                                 | buffer next                                                                                           |
+| package-show-list-packages                   | `space`, `space` then write this command                                                              |
+| `<leader>m`                                  | for any LSP (you can use also `,`)                                                                    |
+| `helm-find-file`                             | for finding file in tree                                                                              |
+| customize-create-theme                       | Creating a color theme                                                                                |
+| `<leader>saf`                                | To open Ag to find file                                                                               |
+| `<leader>sd`-B2 -A2 keyword                  | Find the correct keyword among many files in directory                                                |
+| `::lsp-ui-imenu`                             | Will show object tree for the LSP                                                                     |
+| `<leader>fed`                                | Will open SpaceEmacs buffer quickly (shortcut)                                                        |
+| `<leader>fj`                                 | in any buffer you back to origin of where is the file in dried                                        |
+| `<leadr>fy`                                  | This will allow to copy the file name or other features                                               |
+| `<leader>a u`                                | undo-tree toggle                                                                                      |
+| `<leader>w m`                                | buffer maximized                                                                                      |
+| `<leader>x`                                  | So many features you can find such as c for count buffer elements                                     |
+| `<leader>xgt`                                | google translate for selected words in visual mode                                                    |
+| `gt and gT`                                  | with `tabs` it allows to move between tabs                                                            |
+| `<leader>t`                                  | many functionality                                                                                    |
+| `<leader>a w /`                              | to search in google search engine                                                                     |
+| mini-map-mode                                | to toggle the minimap mode                                                                            |
+| M-:`markdown-toc-generate-toc`               | this will allow you to generate table of content                                                      |
+| `help-xref-interned`                         | offer help on certain function or command in emacs                                                    |
+| `describe-mode`                              | describe with help for a given mode                                                                   |
+| `describe-key`                               | describe a keybinding                                                                                 |
+| `describe-face`                              | about the theme/colors in `emacs`                                                                     |
+| `Rainbow Mode`                               | Activate the colors in the buffer base don the color layer.                                           |
+| `open-command-log-buffer`                    | This will allow you to see the keystrokes                                                             |
+| `close-command-log-buffers`                  | This will close the log-command-buffer                                                                |
+| `<leader>sw`                                 | Built-in web-browser for `Emacs` , it called `eww`                                                    |
+| `<leader>`                                   |                                                                                                       |
+| leader b f                                   | Reveal file in OS Finder                                                                              |
+| list-faces-display                           | This will give you the current faces color search (e.g., yank)                                        |
+| treemacs-display-current-project-execlusivly | This command will narrow down the treemacs to current project directory                               |
+| `<leader>zx`                                 | Font zoom (increase/decrease)                                                                         |
+| `<leader>tL`                                 | toggle truncate lines RET   (unwrap lines)                                                            |
+| `<leader>tl`                                 | toggle line break (unwrap lines)                                                                      |
+| `<leader>fy`                                 | toggle services to copy file name, file path in dired or any buffer                                   |
+| `devdocs-search`                             | This website is dedicated to all programming languages and can seach for defintion                    |
+| `prettier.js`                                | This will format your markdown                                                                        |
+| `C-u M-! date`                               | Ctrl + u then Meta + ! then the shell popup to write **date**, which will insert the date             |
+| `org-goto-calendar`                          | This will open the calander buffer                                                                    |
+| `org-date-from-calendar`                     | This will allow you to insert a date into your buffer, but only when you open the `org-goto-calendar` |
+|                                              |                                                                                                       |
 
+
+## Keybinding Tips
+The best way to keybinding in spacemacs is to use the following:
+1. describe-key
+2. describe-mode
 
 ## How to use the LSP
 

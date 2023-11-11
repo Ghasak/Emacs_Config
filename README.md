@@ -46,7 +46,4 @@ emacs -q --load ~/.spacemancs
 
 ### Fixed Problem
 1. void-function treemacs--setup-icon-background-colors
-
-
-
 - Track the solution here: [Helm-icons-Issues](https://github.com/yyoncho/helm-icons/issues/23)
