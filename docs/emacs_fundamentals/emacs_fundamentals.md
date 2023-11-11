@@ -345,3 +345,7 @@ But before you doom yourself, here are some things you should know:
    additional steps. Run 'doom help upgrade' to understand those extra steps.
 4. Access Doom's documentation from within Emacs via 'SPC h d h' or 'C-h d h'
    (or 'M-x doom/help')
+
+
+## References
+- [how can I insert current date and time in emacs](https://stackoverflow.com/questions/251908/how-can-i-insert-current-date-and-time-into-a-file-using-emacs)

@@ -136,3 +136,33 @@ projects and files.
 *** Org noter
 *** Org Presentation
 *** Orgzly (Android App for sync Org-mode with your phone)
+
+** Org Mode Literal
+*** How to write a code and execute it in Emacs
+There are two types of writing and exctuting code in `emacs Org-Mode` using the following
+1. Assuem you have a script like below
+2. Put the cursor on the script and then `C-c C-c`
+
+#+BEGIN_SRC python
+from os import listdir
+for i in range(10):
+   print(i)
+return i
+#+END_SRC
+
+#+RESULTS:
+: 9
+
+#+BEGIN_SRC python
+  avar = 42
+  return avar
+#+END_SRC
+
+#+RESULTS:
+: 42
+
+** References
+
+- https://howardism.org/Technical/Emacs/literate-programming-tutorial.html
+- https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html
+- https://howardism.org/Technical/Emacs/literate-programming-tutorial.html
