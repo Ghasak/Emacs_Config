@@ -1,10 +1,8 @@
-# Emacs Server-Client Premier
+# Premium Emacs Client-Server
 
-The following workflow is to run the emacs in the most efficient way, we will
-use the following structure. We will use the `macs daemon` server to run in
-background and then connect to it using the `emacsclient` to connect to it.
+## My current workflow
 
-## Steps of Developement
+### Steps of Developement
 
 ```sh
 +--------------+                   +---------------------------+
@@ -34,13 +32,16 @@ background and then connect to it using the `emacsclient` to connect to it.
 
 ## A. Pre-requisites
 
-1. The follow is required to be stopped at first, change the following settings
-   for your ~/.spacemacs file settings as shown below:
+After experiemented with many options for the emacs `--daemon` I found several
+issues (mentioned here). I got convinced that the best way is to keep the
+`spacemacs` works. Now, My work is consists of the following
 
-```lisp
+1. Ensure to allow the server run natively by the `spacemacs` itself, means:
+
+```sh
 ;; If non-nil, start an Emacs server if one is not already running.
 ;; (default nil)
-(dotspacemacs-enable-server nil)
+(dotspacemacs-enable-server t)
 ;; Set the emacs server socket location.
 ;; If nil, uses whatever the Emacs default is, otherwise a directory path
 ;; like \"~/.emacs.d/server\". It has no effect if
@@ -49,28 +50,56 @@ background and then connect to it using the `emacsclient` to connect to it.
 (dotspacemacs-server-socket-dir nil)
 ;; If non-nil, advise quit functions to keep server open when quitting.
 ;; (default nil)
-(dotspacemacs-persistent-server nil)
+(dotspacemacs-persistent-server t)
 ```
 
 ## 1. Installation
 
-### 1.1 Running daemon in backgroud
+### 1.1 Running orgianl emacs app in background
 
-1. Now, we run the `applescript` that will launch the `emacs daemon` when we loggin to our machine
-- This will run every time you log in to your machine.
-- We assign the name `daemon.emacs.server.start.login` for this purpose.
-- Then, we go to the mac setting to add it to the login process, which will launch the script at startup as we specified.
-- server name can be any name, I here used `server_ghasak_01`.
+1. Now, we run the AppleScript that launches the Emacs app but not passing the `--daemon` when we log in to our machine.
+   This will run every time you log in to your machine, as previously stated.
+
+- We have assigned the name "daemon.emacs.server.start.login" for this purpose.
+- Then,we proceed to add it to the login process via mac settings to launch the script
+  at startup as specified. Here, we will rely on the server name intiated by `.spaceamcs`, which is usually called `server` by default.
+- The script will ensure to run the emacs, only once
 
 ```applescript
 on run {input, parameters}
-      (* Your script goes here *)
-      do shell script "/opt/homebrew/bin/emacs --daemon=server_ghasak_01"
-      return input
+   -- Wait for 50 seconds
+   delay 50
+
+   -- Start Emacs without blocking the script (using & to put the command in the background)
+   do shell script "/opt/homebrew/bin/emacs"
+
+   -- Use AppleScript to find and minimize the Emacs window.
+   -- Note: This part is pseudo-code and may not work as expected because
+   -- controlling GUI applications can be complex and application-specific.
+   tell application "System Events"
+      set emacsProcess to the first process where its name contains "Emacs"
+      set frontmost of emacsProcess to false -- This will not activate Emacs window.
+      -- To minimize you may need additional logic to locate the window
+      -- and use the 'keystroke' command to simulate a user action to minimize.
+   end tell
+
+   return input
 end run
+
 ```
 
-![M01](./assets/M01.png)
+2. [I used this one], If we do not wish to launch `emacs` automatically when starting up, we can
+   simply, run from the terminal session the `emacs` and put it in background
+   using
+
+- This command will be run only once, using:
+
+```sh
+$ emacs .&
+```
+
+- The server in background will be created and it called `server`, and can be
+  found using the `socket_file` command (see below).
 
 ### 1.2. Calling the emacs using emacs client
 
@@ -80,10 +109,10 @@ end run
 
 ```applescript
 on run {input, parameters}
-	(* Your script goes here *)
-	do shell script "/opt/homebrew/bin/emacsclient -n -c --socket-name=server_ghasak_01 -a 'emacs' ~/."
-	display notification "Emacsclient launched" with title "Quick Action"
-	return input
+   (* Your script goes here *)
+   do shell script "/opt/homebrew/bin/emacsclient -n -c --socket-name=server -a 'emacs' ~/."
+   display notification "Emacsclient launched" with title "Quick Action"
+   return input
 end run
 ```
 
@@ -112,29 +141,15 @@ you determine which group to allow permission, these below the one I used.
 
 ![M03](./assets/M03.png)
 
-## B. More options
-
-- I found that the loggin server mentioned above will not read my user-config
-  file properly:
-  - Org mode has a probelmm wiht aligned text and
-  - The check-boxes will reseted not by the icons I specified.
-  - The header which replaced the title-bar will have a different color
-  - Environment variable will not have enought time to read them, for example my C++ projects.
-  - The most frustrating aspect is that I am unable to resolve the century tab, as it disappears when I use the server with the daemon parameter.
-- Given all these, Instead, I decided to run the emacs manually the server using the
-  following command (you need to run this command only once, which will run in background by passing & ).
-
-```sh
-alias myemacs="/opt/homebrew/bin/emacs --daemon=server_ghasak_01 &"
-```
-
-- Then, later I just need to second part, which means that we run `emacsclient` using the `command + e`.
-
 ## C. How to stop the server
 
-1. Easy way to use `fkill` and search for emacs, you will properly find it with the name like:
-   - `/opt/homebrew/Cellar/emacs-plus@30/30.0.50/Emacs.app/Contents/MacOS/Emacs --bg-daemon=\0123,4\012server_ghasak_01`
-2. Using the specified processor, then pass to kill command
+You will be able to see the running server in the background by using the `fkill` command in its standard format.,
+
+```sh
+/opt/homebrew/Cellar/emacs-plus@30/30.0.50/Emacs.app/Contents/MacOS/Emacs
+```
+
+1. Using the specified processor, then pass to kill command
 
 ```sh
 ps aux | grep Emacs
@@ -142,13 +157,13 @@ ps aux | grep Emacs
 pgrep -u "$USER" -x Emacs
 ```
 
-3. Using, the emacsclient itself.
+2. Using, the emacsclient itself.
 
 ```sh
 emacsclient -e '(kill-emacs)'
 ```
 
-4. Or, in oneliner
+3. Or, in oneliner
 
 ```sh
 kill -9 $(ps aux | grep Emacs | grep -v grep | awk '{print $2}')
