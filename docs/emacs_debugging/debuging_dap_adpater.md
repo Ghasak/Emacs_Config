@@ -83,8 +83,10 @@ installed `lldb` for `macOS` users or `gdp` for `linux` users.
 We are using `lldb-1403.0.17.64 Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)` as our current `lldb` version to use it for current
 debugging.
 
-1. Build your solution for latest code changes, deployed using `cargo run` or `cargo-watch -c -x run --quiet`
-2. At the root directory of our `Crate`, We run in terminal session the command `lldb`.
+1. Build your solution for latest code changes, deployed using `cargo run` or
+   `cargo-watch -c -x run --quiet`
+2. At the root directory of our `Crate`, We run in terminal session the command
+   `lldb`.
 3. Run the target inside the `lldb` using
 
 - Current executable set to `lldb-mi` (M1-arm64), which I found it the best option since I don't have the `gdp` for the macOS.

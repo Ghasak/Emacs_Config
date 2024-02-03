@@ -1,14 +1,16 @@
 # Markdown with Emacs
 
 The following configurations is given for the `Emacs` `spacemacs` to export to makrdown as well (not setted by default)
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+
 **Table of Contents**
 
 - [Markdown with Emacs](#markdown-with-emacs)
-    - [Steps](#steps)
-    - [1. Make sure you have the markdown layer installed](#1-make-sure-you-have-the-markdown-layer-installed)
-    - [2. Add the md export backend into Spacemacs](#2-add-the-md-export-backend-into-spacemacs)
-    - [3. Verify the exportation](#3-verify-the-exportation)
+  - [Steps](#steps)
+  - [1. Make sure you have the markdown layer installed](#1-make-sure-you-have-the-markdown-layer-installed)
+  - [2. Add the md export backend into Spacemacs](#2-add-the-md-export-backend-into-spacemacs)
+  - [3. Verify the exportation](#3-verify-the-exportation)
 
 <!-- markdown-toc end -->
 
@@ -25,16 +27,20 @@ main editor.
 To be able to export to a Markdown from an Org file, you need to do the following:
 
 ## 1. Make sure you have the markdown layer installed
+
 Having the markdown layer installed will give you a better experience when editing markdown files.
 
 ## 2. Add the md export backend into Spacemacs
+
 You need to add the md value into the export backends variable. The easiest way
 for me to do this is the following:
 
 Inside Spacemacs type:
+
 ```elisp
 M-x customize-option
 ```
+
 and then type `org-export-backends`.
 
 It will bring a customization buffer in which you can move with the arrow keys,
@@ -44,6 +50,7 @@ save button.
 Modifying export backends
 
 ## 3. Verify the exportation
+
 After applying and saving the new export backend, you can do a new export doing the following:
 
 With an org file buffer open, type:

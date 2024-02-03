@@ -1,6 +1,5 @@
 # Debugging with Spacemacs
 
-
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
@@ -12,6 +11,10 @@
     - [Where can I find `lldb-mi`](#where-can-i-find-lldb-mi)
     - [Using Cpptools](#using-cpptools)
         - [vscode-cpptools](#vscode-cpptools)
+            - [TEMPLATE -1-](#template--1-)
+            - [TEMPLATE -2- WORKING](#template--2--working)
+            - [TEMPLATE -3- WORKING](#template--3--working)
+            - [TEMPLATE -4-](#template--4-)
         - [Comment by reddit users](#comment-by-reddit-users)
     - [Debugging for Python](#debugging-for-python)
     - [References](#references)
@@ -173,11 +176,22 @@ then you are good start debugging.
   (require 'dap-cpptools)
   ```
 
+1. Press 'leader leader' and then 'dap-cpptools-setup' to enable C/C++
+   debugging support. Use `lldb-`
+2. Use 'dap-debug-edit-template' to add the adapter, followed by evaluating the
+   buffer and writing it to the register with 'dap-evaluate'.
+3. Choose one of the following templates as you have already installed the dap
+   adapter:
+
 - Usage `dap-debug-edit-template` and select template `cpptools` prefixed configuration.
 
-1. Use `dap-debug-edit-tempate`, to add the adapter, and evalute the buffer
-   after to write it to the register.
+4. 'dap-debug' can be accessed by pressing ' leader ddd'.
+5. Use ' leader leader' then 'dap-hydra' for convenient debugging and
+   navigation.
 
+6. You can use `dap-ui-repl` and print directly the varaibles for their values.
+
+#### TEMPLATE -1-
 ```lisp
 ;; Eval Buffer with `M-x eval-buffer' to register the newly created template.
 
@@ -192,6 +206,7 @@ then you are good start debugging.
         :cwd "${workspaceFolder}"))
 ```
 
+#### TEMPLATE -2- WORKING
 - You can also make the directory relative, using:
 
 ```lisp
@@ -205,6 +220,8 @@ then you are good start debugging.
        :program "${workspaceFolder}/build/debug/main"  ;; Refer to your binary here
        :cwd "${workspaceFolder}"))
 ```
+
+#### TEMPLATE -3- WORKING
 - I also built the `llvm` project from scratch and I also built the `lldb-mi` based on the `llvm` built and I refer to the same adapter using
 
 ```lisp
@@ -219,7 +236,7 @@ then you are good start debugging.
        :cwd "${workspaceFolder}"))
 ```
 
-
+#### TEMPLATE -4-
 - I also found that we can pass the
   `${workspaceFolder}/build/debug/${fileBasenameNoExtension}`, which will give
   is exactly the `main`, without specifying the binary name, this is super handy
@@ -311,38 +328,37 @@ lldb-vscode, which is installed under /usr/bin/lldb-vscode.
          },
 ```
 
-
 - Here, is another launch.json for vscode
 
 ```json
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "clang++ - Build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "setupCommands": [
         {
-            "name": "clang++ - Build and debug active file",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "C/C++: clang++ build active file",
-            "miDebuggerPath": "/usr/bin/lldb"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ],
+      "preLaunchTask": "C/C++: clang++ build active file",
+      "miDebuggerPath": "/usr/bin/lldb"
+    }
+  ]
 }
 ```
 

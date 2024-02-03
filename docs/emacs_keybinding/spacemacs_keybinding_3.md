@@ -16,7 +16,9 @@
 | ~C-x s~     | save-some-buffers: Save open buffers                           |
 | ~C-u C-x s~ | Save all open buffers without asking                           |
 | ~C-]~       | In Helm buffer - see complete filename                         |
+
 ** Spacemacs shortcuts
+
 Spacemacs uses a leader key to bind almost all its key bindings. In Vim mode,
 the leader key is set on ~SPC~ (the space bar, hence the name spacemacs). In
 Emacs style the leader is available on ~M-m~. So shortcuts with ~SPC~ can be

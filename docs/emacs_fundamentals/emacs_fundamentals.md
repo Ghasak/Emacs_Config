@@ -115,6 +115,7 @@ Here is the list of things that I change
 | `C-u M-! date`                               | Ctrl + u then Meta + ! then the shell popup to write **date**, which will insert the date             |
 | `org-goto-calendar`                          | This will open the calander buffer                                                                    |
 | `org-date-from-calendar`                     | This will allow you to insert a date into your buffer, but only when you open the `org-goto-calendar` |
+| `<leader>pf`                                 | Using `helm-projectile-find-file` fuzzy finding file in the give project.                             |
 |                                              |                                                                                                       |
 
 
