@@ -1,6 +1,15 @@
 # Rust-Analyzer Configurations for Emacs
 
+- [x] **NOTE**: In my Ubuntu, I discovered that installing the following is
+      necessary for the server to function correctly despite having already
+      installed it in the path for rust-analyzer. Use the `helm-M-x`.
+
+```lisp
+rustic-cargo-install
+```
+
 ## Problem withh rust-analyzer
+
 I have faced a problem with `rust-analyzer` it shows that it is not working. The
 reason is that `rust-analyzer` was not working and not installed on my machine.
 You can install it using either.
@@ -15,8 +24,9 @@ brew install rust-analyzer
 ╰─ rust-analyzer --version
 rust-analyzer 0.0.0 (833d5301d 2023-05-07)
 ```
-2. Export the already existed `stable` version comes with `cargo` located at `~/.cargo/bin/`
 
+2. Export the already existed `stable` version comes with `cargo` located at
+   `~/.cargo/bin/`
 3. You can download the `rust-analyzer` binary from here
 
 - [Rust-Analyzer](https://github.com/rust-lang/rust-analyzer/releases)
@@ -26,7 +36,7 @@ Currently I have the following installed on my `spacemacs`.
 ```shell
 Workspaces:
 Loaded 12 packages across 1 workspace.
-Workspace root folders: [AbsPath("/Users/gmbp/Desktop/emacs_testing/rust")]
+Workspace root folders: [AbsPath("/Users/xxxx/Desktop/emacs_testing/rust")]
 Vfs memory usage: 22998339
 
 Analysis:
@@ -47,7 +57,10 @@ Dependencies: core=Idx::<CrateData>(0), alloc=Idx::<CrateData>(1), test=Idx::<Cr
 ```
 
 ## Can we add inlay
-I was able to make the `inlay` working using the following, Adding these will allow to show the types in `Rust`, which is not supporting other `LSP` from the `lsp-config` at the momement.
+
+I was able to make the `inlay` working using the following, Adding these will
+allow to show the types in `Rust`, which is not supporting other `LSP` from the
+`lsp-config` at the momement.
 
 ```lisp
   ;; -------------------------------------------------------------

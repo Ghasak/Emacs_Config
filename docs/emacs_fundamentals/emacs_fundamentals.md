@@ -38,6 +38,16 @@ configurations. Now, everything works flawlessly.
 | SPC b 0 to SPC b 9: | These keybindings allow you to quickly switch to buffers numbered from 0 to 9. |
 | SPC b d :           | This keybinding shows a list of recently visited buffers.                      |
 
+## Check all Execution Path 
+
+Emacs will automatically search these directories by default, and all required
+binary files must be guaranteed to be installed in these locations.
+
+```lisp
+:(message "%s" exec-path)
+```
+
+
 ## Tips and Tricks
 
 - You can use either ` \`` or  `'` to repeat last command you used in your given buffer.

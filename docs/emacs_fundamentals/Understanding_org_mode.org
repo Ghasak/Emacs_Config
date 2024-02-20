@@ -163,7 +163,6 @@ return i
 
 
 
-
 ** References
 
 - https://howardism.org/Technical/Emacs/literate-programming-tutorial.html
