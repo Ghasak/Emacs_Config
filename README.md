@@ -6,6 +6,7 @@ Emacs Config file for my daily workflow -
 
 Changes made to this guide:
 
+- `2024-03-03`: Fixed problem with installing company from MELPA
 - `2023-11-07`: Adding more configurations to support multiple coding experiences.
 - `2023-10-02`: Fixed the problem of void treemacs--setup-icon-background-colors.
 - `2023-09-10`: Now I am using `Emacs30` natively on my current machine.
@@ -39,11 +40,24 @@ Current `spacemacs` configurations supports
 
 ### Installing
 
-```shell
+```sh
 git clone https://github.com/Ghasak/emacs_config
 emacs -q --load ~/.spacemancs
 ```
 
-### Fixed Problem
+### TroubleShooting and Error History
+
 1. void-function treemacs--setup-icon-background-colors
+
 - Track the solution here: [Helm-icons-Issues](https://github.com/yyoncho/helm-icons/issues/23)
+
+2. Some useful commands for resolving problems with downloading the packages from MELPA
+
+```lisp
+package-refresh-contents
+
+```
+
+```lisp
+Try clearing the cache in your browser for melpa.org. Or just pressing Ctrl-F5.
+```

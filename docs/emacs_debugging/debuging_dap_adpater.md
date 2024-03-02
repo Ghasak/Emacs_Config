@@ -37,8 +37,10 @@ In Emacs (`spacemacs`) We need to provide three things
 
 #### Steps for Debugging in Emacs
 
-1. Run the command `dap-gdb-lldb-setup`, this will work if you are in any `Rust` project.
-2. Ensure you have `dap-mi` install in your home directory, I use the following by adding it to my `.zshrc`.
+1. Run the command `dap-gdb-lldb-setup`, this will work if you are in any `Rust`
+   project.
+2. Ensure you have `dap-mi` install in your home directory, I use the following
+   by adding it to my `.zshrc`.
 
 ```zsh
 export PATH="$PATH:$HOME/.vscode/extensions/ms-vscode.cpptools-1.15.4-darwin-arm64/debugAdapters/lldb-mi/bin/"

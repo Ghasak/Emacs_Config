@@ -10,17 +10,19 @@
   - [Tips and Tricks](#tips-and-tricks)
   - [Configurations with SpaceEmacs](#configurations-with-spaceemacs)
   - [Keybinding I use](#keybinding-i-use)
+  - [Keybinding Tips](#keybinding-tips)
   - [How to use the LSP](#how-to-use-the-lsp)
   - [Pacakges to be installed](#pacakges-to-be-installed)
   - [Types of shells in Emacs](#types-of-shells-in-emacs)
   - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
-  - [Language servers and layers](#language-servers--and-layers)
+  - [Language servers and layers](#language-servers-and-layers)
   - [Selected themes](#selected-themes)
   - [Fonts Configurations](#fonts-configurations)
-    - [Other configurations](#other-configurations)
+  - [Other configurations](#other-configurations)
   - [User configurations](#user-configurations)
   - [From Scratch](#from-scratch)
   - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
+  - [References](#references)
 
 <!-- markdown-toc end -->
 
@@ -28,6 +30,14 @@
 
 The following configurations for my `Emacs` are based on `spacemecas`
 configurations. Now, everything works flawlessly.
+
+## Hacking
+
+- I use the follwing hack to jump in line
+  - Using `f` then type the letter of begging of a word you want to jump to,
+    then `f` again and again, to go back using `F`.
+- To jump with many other options try `space j` which will allow you to jump
+  anywhere you want.
 
 ## Quick way to navigate between buffers
 
@@ -38,7 +48,7 @@ configurations. Now, everything works flawlessly.
 | SPC b 0 to SPC b 9: | These keybindings allow you to quickly switch to buffers numbered from 0 to 9. |
 | SPC b d :           | This keybinding shows a list of recently visited buffers.                      |
 
-## Check all Execution Path 
+## Check all Execution Path
 
 Emacs will automatically search these directories by default, and all required
 binary files must be guaranteed to be installed in these locations.
@@ -47,10 +57,9 @@ binary files must be guaranteed to be installed in these locations.
 :(message "%s" exec-path)
 ```
 
-
 ## Tips and Tricks
 
-- You can use either ` \`` or  `'` to repeat last command you used in your given buffer.
+- You can use either ` \` or `'` to repeat last command you used in your given buffer.
 
 ## Configurations with SpaceEmacs
 
@@ -117,7 +126,7 @@ Here is the list of things that I change
 | list-faces-display                           | This will give you the current faces color search (e.g., yank)                                        |
 | treemacs-display-current-project-execlusivly | This command will narrow down the treemacs to current project directory                               |
 | `<leader>zx`                                 | Font zoom (increase/decrease)                                                                         |
-| `<leader>tL`                                 | toggle truncate lines RET   (unwrap lines)                                                            |
+| `<leader>tL`                                 | toggle truncate lines RET (unwrap lines)                                                              |
 | `<leader>tl`                                 | toggle line break (unwrap lines)                                                                      |
 | `<leader>fy`                                 | toggle services to copy file name, file path in dired or any buffer                                   |
 | `devdocs-search`                             | This website is dedicated to all programming languages and can seach for defintion                    |
@@ -126,11 +135,13 @@ Here is the list of things that I change
 | `org-goto-calendar`                          | This will open the calander buffer                                                                    |
 | `org-date-from-calendar`                     | This will allow you to insert a date into your buffer, but only when you open the `org-goto-calendar` |
 | `<leader>pf`                                 | Using `helm-projectile-find-file` fuzzy finding file in the give project.                             |
+| `<leader>hl`                                 | To know any layer you want to examine and work on                                                     |
 |                                              |                                                                                                       |
 
-
 ## Keybinding Tips
+
 The best way to keybinding in spacemacs is to use the following:
+
 1. describe-key
 2. describe-mode
 
@@ -297,7 +308,7 @@ programming language mode. Here are the general steps you can follow:
 
 ## User configurations
 
-```emacs-lisp
+```lisp
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
@@ -357,6 +368,6 @@ But before you doom yourself, here are some things you should know:
 4. Access Doom's documentation from within Emacs via 'SPC h d h' or 'C-h d h'
    (or 'M-x doom/help')
 
-
 ## References
+
 - [how can I insert current date and time in emacs](https://stackoverflow.com/questions/251908/how-can-i-insert-current-date-and-time-into-a-file-using-emacs)
