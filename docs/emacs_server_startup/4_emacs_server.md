@@ -1,7 +1,6 @@
 # Server with Emacs
 
-In the following documentations we will explain the exact behavior for the
-`server` in emacs.
+In the following documentations we will explain the exact behavior for the `server` in emacs.
 
 ## Emacs Server Concept
 

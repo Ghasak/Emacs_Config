@@ -23,14 +23,15 @@ This is a great way to make thing
 - [X] or adding more
 - [X] Assume the right way to make things right
 
-* TODO This is level - 1 [3/6][50%]
+* TODO This is level - 1 [2/5][40%]
 Adding here more details aobut your current objective. There are many way to achieve our current objective as you can see.
 - [X] This is a test
-- [X] This is a test
+- [ ] This is a test
+- [ ] This is a test
 - [ ] This is a test
 - [X] This is a test
-- [ ] This is a test
 
+- For the right way
 
 ** This is level -2
 *** This is level-3

@@ -48,6 +48,26 @@ git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
 
 5. Now, we can add our `.spacemacs` config file to our current root directory.
 
+
+6. You will need utilitites to install
+
+```sh
+brew install libtool # for building vterm for Emacs
+pip install importmagic epc
+pip install autoflake flake8 debugpy
+brew install cmake ninja clang-format
+```
+
+
+7. Necessary installtion steps for Python
+Emacs sees the `$PATH` for your global python in the system. You can change the
+complier for python using the following step.
+
+- Use `<leader><leader>` and pick `customize-group` RET then select `python` then RET.
+- Select `Python Shell Interpreter`: and input the path to your python for
+  example `String: /usr/local/bin/python3`.
+
+
 ## Reference
 
 - [homebrew-emacs-plus support](https://github.com/d12frosted/homebrew-emacs-plus?tab=readme-ov-file)
