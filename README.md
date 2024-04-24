@@ -53,11 +53,11 @@ emacs -q --load ~/.spacemancs
 
 2. Some useful commands for resolving problems with downloading the packages from MELPA
 
-```lisp
+```sh
 package-refresh-contents
 
 ```
 
-```lisp
+```sh
 Try clearing the cache in your browser for melpa.org. Or just pressing Ctrl-F5.
 ```

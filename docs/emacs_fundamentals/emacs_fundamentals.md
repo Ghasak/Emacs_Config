@@ -31,13 +31,22 @@
 The following configurations for my `Emacs` are based on `spacemecas`
 configurations. Now, everything works flawlessly.
 
-## Hacking
+## 1. Hacking
 
 - I use the follwing hack to jump in line
   - Using `f` then type the letter of begging of a word you want to jump to,
     then `f` again and again, to go back using `F`.
 - To jump with many other options try `space j` which will allow you to jump
   anywhere you want.
+
+## 2. Hacking with Transient Paste
+
+1. Assume you have several copies in your register and want to navigate them.
+2. First paste last instance of things that you stored in your register, using `p`
+3. The `spacemacs/paste-transient-state/evil-paste-pop` will provide you the
+   option `Ctrl_jk` to navigate into your register and find all your stored
+   instances.
+4. There is also `evil-repeat-pop` which you can read more about it as well.
 
 ## Quick way to navigate between buffers
 
@@ -136,14 +145,16 @@ Here is the list of things that I change
 | `org-date-from-calendar`                     | This will allow you to insert a date into your buffer, but only when you open the `org-goto-calendar` |
 | `<leader>pf`                                 | Using `helm-projectile-find-file` fuzzy finding file in the give project.                             |
 | `<leader>hl`                                 | To know any layer you want to examine and work on                                                     |
+| `<leader>tmn`                                | To toggel on/off for Nyan-Mode , located in the colors layer                                          |
 |                                              |                                                                                                       |
 
 ## Keybinding Tips
 
 The best way to keybinding in spacemacs is to use the following:
 
-1. describe-key
-2. describe-mode
+1. describe-key (which key you are pressing right now)
+2. describe-mode (which mode you are using , used for changing the buffer, for example undefined buffer can be ts-bash-mode, or lsp-mode ..etc.).
+3. describe-face (for checking the color)
 
 ## How to use the LSP
 
