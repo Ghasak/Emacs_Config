@@ -1,10 +1,10 @@
 # EMACS BASIC CONFIGURATIONS
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-
 **Table of Contents**
 
 - [EMACS BASIC CONFIGURATIONS](#emacs-basic-configurations)
+<<<<<<< Updated upstream
   - [CONCEPTS](#concepts)
   - [Quick way to navigate between buffers](#quick-way-to-navigate-between-buffers)
   - [Tips and Tricks](#tips-and-tricks)
@@ -23,6 +23,43 @@
   - [From Scratch](#from-scratch)
   - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
   - [References](#references)
+||||||| Stash base
+  - [CONCEPTS](#concepts)
+  - [Quick way to navigate between buffers](#quick-way-to-navigate-between-buffers)
+  - [Tips and Tricks](#tips-and-tricks)
+  - [Configurations with SpaceEmacs](#configurations-with-spaceemacs)
+  - [Keybinding I use](#keybinding-i-use)
+  - [How to use the LSP](#how-to-use-the-lsp)
+  - [Pacakges to be installed](#pacakges-to-be-installed)
+  - [Types of shells in Emacs](#types-of-shells-in-emacs)
+  - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
+  - [Language servers and layers](#language-servers--and-layers)
+  - [Selected themes](#selected-themes)
+  - [Fonts Configurations](#fonts-configurations)
+    - [Other configurations](#other-configurations)
+  - [User configurations](#user-configurations)
+  - [From Scratch](#from-scratch)
+  - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
+=======
+    - [CONCEPTS](#concepts)
+    - [Quick way to navigate between buffers](#quick-way-to-navigate-between-buffers)
+    - [Tips and Tricks](#tips-and-tricks)
+    - [Configurations with SpaceEmacs](#configurations-with-spaceemacs)
+    - [Keybinding I use](#keybinding-i-use)
+    - [Keybinding Tips](#keybinding-tips)
+    - [How to use the LSP](#how-to-use-the-lsp)
+    - [Pacakges to be installed](#pacakges-to-be-installed)
+    - [Types of shells in Emacs](#types-of-shells-in-emacs)
+    - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
+    - [Language servers and layers](#language-servers-and-layers)
+    - [Selected themes](#selected-themes)
+    - [Fonts Configurations](#fonts-configurations)
+    - [Other configurations](#other-configurations)
+    - [User configurations](#user-configurations)
+    - [From Scratch](#from-scratch)
+    - [Configurations wiht DOOM Emacs](#configurations-wiht-doom-emacs)
+    - [References](#references)
+>>>>>>> Stashed changes
 
 <!-- markdown-toc end -->
 
@@ -31,6 +68,7 @@
 The following configurations for my `Emacs` are based on `spacemecas`
 configurations. Now, everything works flawlessly.
 
+<<<<<<< Updated upstream
 ## 1. Hacking
 
 - I use the follwing hack to jump in line
@@ -48,6 +86,18 @@ configurations. Now, everything works flawlessly.
    instances.
 4. There is also `evil-repeat-pop` which you can read more about it as well.
 
+||||||| Stash base
+=======
+## Hacking
+- I use the follwing hack to jump in line
+  - Using `f` then type the letter of begging of a word you want to jump to,
+    then `f` again and again, to go back using `F`.
+- To jump with many other options try `space j` which will allow you to jump
+  anywhere you want.
+
+
+
+>>>>>>> Stashed changes
 ## Quick way to navigate between buffers
 
 | keybinding          | Description                                                                    |
