@@ -125,3 +125,121 @@ optimize performance further.
 
 By following these steps, you can make Emacs leverage multiple cores more
 effectively and improve its overall performance.
+
+
+
+## How to increase the speed of Emacs
+
+You can increase the cursor speed in Spacemacs when using `evil-mode` by
+adjusting the key repeat rate and configuring Spacemacs settings for a more
+responsive experience.
+
+### Adjusting Key Repeat Rate
+
+On macOS, you can adjust the key repeat rate system-wide, which will affect how
+quickly the cursor moves when you hold down a movement key in `evil-mode`. You
+can do this via the Terminal:
+
+```sh
+# Set a fast key repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+# Set a short delay until key repeat starts
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+```
+
+After running these commands, you may need to log out and back in, or restart
+your Mac, for the changes to take effect.
+
+### Spacemacs Configuration
+
+To ensure a smooth experience in Spacemacs and `evil-mode`, you can also adjust
+some Spacemacs-specific settings.
+
+#### Update `dotspacemacs/user-config`
+
+Add the following to your Spacemacs configuration file (`.spacemacs`) in the
+`dotspacemacs/user-config` section:
+
+```elisp
+(defun dotspacemacs/user-config ()
+  ;; Increase the evil-mode cursor speed
+  (setq evil-move-cursor-back nil)
+  (setq evil-move-beyond-eol t)
+  (setq evil-want-C-u-scroll t)
+
+  ;; Other custom configurations
+  ;; ...
+)
+```
+
+#### Additional Settings for `evil-mode`
+
+You can tweak more `evil-mode` settings to enhance the cursor movement responsiveness:
+
+```elisp
+(defun dotspacemacs/user-config ()
+  ;; Enable smooth scrolling
+  (setq scroll-margin 5
+        scroll-conservatively 10000
+        scroll-preserve-screen-position 1
+        auto-window-vscroll nil)
+
+  ;; Make cursor movement more responsive
+  (setq redisplay-dont-pause t)
+
+  ;; Set a higher debounce time for faster feedback
+  (setq jit-lock-defer-time 0)
+
+  ;; Speed up cursor movement in visual state
+  (setq evil-visual-state-cursor 'box)
+
+  ;; Faster cursor movements in insert state
+  (setq evil-insert-state-cursor 'bar)
+
+  ;; Increase the evil-mode cursor speed
+  (setq evil-move-cursor-back nil)
+  (setq evil-move-beyond-eol t)
+  (setq evil-want-C-u-scroll t)
+
+  ;; Other custom configurations
+  ;; ...
+)
+```
+
+### Full Configuration Example
+
+Here is an example of the full configuration with the recommended settings:
+
+```elisp
+(defun dotspacemacs/user-config ()
+  ;; Enable smooth scrolling
+  (setq scroll-margin 5
+        scroll-conservatively 10000
+        scroll-preserve-screen-position 1
+        auto-window-vscroll nil)
+
+  ;; Make cursor movement more responsive
+  (setq redisplay-dont-pause t)
+
+  ;; Set a higher debounce time for faster feedback
+  (setq jit-lock-defer-time 0)
+
+  ;; Speed up cursor movement in visual state
+  (setq evil-visual-state-cursor 'box)
+
+  ;; Faster cursor movements in insert state
+  (setq evil-insert-state-cursor 'bar)
+
+  ;; Increase the evil-mode cursor speed
+  (setq evil-move-cursor-back nil)
+  (setq evil-move-beyond-eol t)
+  (setq evil-want-C-u-scroll t)
+
+  ;; Your existing configurations
+  (setq dotspacemacs-gc-cons '(100000000 0.1))
+  ;; Other custom configurations
+)
+```
+
+By making these adjustments, you should experience a noticeable improvement in
+cursor speed and overall responsiveness when using `evil-mode` in Spacemacs.
