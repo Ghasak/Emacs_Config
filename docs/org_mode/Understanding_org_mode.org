@@ -1,4 +1,4 @@
-* Org Mode in Action Understanding
+* Org Mode in Action Understanding [100%] [4/4]
 ~org mod~ for mananging multiple projects and environments. Which
 will allow us to work with several files, notes, ..etc. This will be covered.
 are:
@@ -10,32 +10,74 @@ are:
 ** Key Bindings and Commands
 Keybinding for the most activities in ~Emacs~ which are used on daily basis =keybinding= with activities:
 
-| keybinding                     | Command | Description                    | Note                                  |
-|--------------------------------+---------+--------------------------------+---------------------------------------
-| tab / shift tab                |         | Fold/unflod                    | In general org mode
-| alt + h/l                      |         | Indent a headline              | In general org mode ok)
-| alt+ j/k                       |         | Up/down a headline             | In general org mode ok)
-| <leader>ji                     |         | Searching for headers quickly  |
-| C-C + [                        |         | adding file to org-agenda      | In org agenda
-| <space> a o o                  |         | accessing org-agenda dashboard | Assume you added a file to org-agenda
-| <space> a o t                  |         | List all the tracked files     | In org agenda
-| , d  or <space>m d             |         | Access the calender scheduler  | In org calender
-| helm-org-agenda-files-headings |         | search all heading             |
+| idx | keybinding                     | Description                      | Note                              |
+|-----+--------------------------------+----------------------------------+-----------------------------------|
+|   0 | shfit + -> <-                  | TODO cycle in headers            | In general org mode               |
+|   1 | Ctrl + enter                   | new bullets                      | In general org mode               |
+|   2 | tab /shfit tabs                | fold/unfold                      | In general org mode - removed     |
+|   3 | alt + h/l                      | Indent a headline                | In general org mode - used        |
+|   4 | <leader> ji                    | Searching for headers quickly    | In general org mode - used        |
+|   5 | C-C + [                        | Adding file to org-agenda        | In org agenda                     |
+|   6 | <space> a o o                  | accessing org-agenda dashboard   | Assume added a file to org-agenda |
+|   7 | <space> a o t                  | List all the tracked files       | In org agenda                     |
+|   8 | <space> a o a                  | Show the chronocial agenda tasks | In org agenda                     |
+|   9 | , + d or <space>m d            | Access the calender scheduler    | Selecting the deadline            |
+|  10 | , + d + d                      | deadline                         |                                   |
+|  11 | , + d + s                      | schedule a task                  |                                   |
+|  12 | <space> j i                    | Show all headers                 |                                   |
+|  13 | helm-org-agenda-files-headings |                                  |                                   |
+|  14 | Using [%] and [\]              | Put thes to track                |                                   |
+|  15 | Using ~,,~ double commma         | Get the task done                | In org mode                       |
+|  16 | shift+tab                      | cycle for bullets collapsing     | in insert mode,org mode           |
 
-*** You can search through all headings in a file using (SPC j i)
+- [X]  You can search through all headings in a file using (SPC j i)
+
+** Highlighting words
+
+There are two ways to highlight a given word: surrounding it with ~~~ or using ===. Both can be used for different purposes.
+
+** Tasks
+Org headlines can also be tasks.
+*** A heading prepended with "keyword" turns it into a todo
+You can cycle through the ~keyword~ by holding =shift + left/right= arrow keys.
+*** You can also just change the text of the keyword itself
+This is called ~changing the state~ and it's possible to track this.
+*** A new task heading at the same level is created with ~T~
+*** You can narrow the view in a file to just the =TODOs=
+You can use here ~org-show-todo-tree~ which you can run with ~,T~
 
 ** Links, Images, and other Markup
 The org link format is [[link][]] e.g. my github You can also link to images in
 the same way but without the link text. Images can have a caption and a name
 however.
 
+
 ** Tables
+
+Org makes it easy to format tables in plain ASCII. Any line with ‘|’ as the first non-whitespace character is considered part of a table. ‘|’ is also the column separator17. Moreover, a line starting with ‘|-’ is a horizontal rule. It separates rows explicitly. Rows before the first horizontal rule are header lines. A table might look like this:
+
+| Name  | Phone | Age |
+|-------+-------+-----|
+| Peter |  1234 |  17 |
+| Anna  |  4321 |  25 |
+
+A table is re-aligned automatically each time you press TAB, RET or C-c C-c inside the table. TAB also moves to the next field—RET to the next row—and creates new table rows at the end of the table or before horizontal lines. The indentation of the table is set by the first line. Horizontal rules are automatically expanded on every re-align to span the whole table width. So, to create the above table, you would only type
+
+|Name|Phone|Age|
+|-
+and then press TAB to align the table and start filling in fields. Even faster would be to type ‘|Name|Phone|Age’ followed by C-c RET.
+
+When typing text into a field, Org treats DEL, Backspace, and all character keys in a special way, so that inserting and deleting avoids shifting other fields. Also, when typing immediately after point was moved into a new field with TAB, S-TAB or RET, the field is automatically made blank. If this behavior is too unpredictable for you, configure the option org-table-auto-blank-field.
 Org makes it really easy to work with text based tables.
+
 | Heading 1 | Heading 2 | heading 3 |
 |-----------+-----------+-----------|
 |         0 | Name 0    | City 0    |
 |         1 | Name 1    | City 1    |
 |         2 | Name 2    | City 2    |
+
+read more
+
 
 ** Agenda
 The agenda in ~org mode~ is given us the ability to track one or more files ~single file~ progress.
@@ -116,7 +158,7 @@ You can also use
 (spacemacs/set-leader-keys "oi" 'helm-org-agenda-files-headings)
 #+end_src
 
-** Exportingg
+** Exporting
 There are several format to export the ~org mode~ (with number of formats). We use =(, e e)= opens the menu, you can find some useful themes here https://github.com/fniessen/org-html-themes Code, tables, etc, will all be rendered as expected. ~GitHub~ will automatically render =org files=. I export either using ~HTML~ or ~pdf~ (just follow the transient buffer keybindings)
 - ~[C-s]~ Export scope: Buffer/Subtree. If you use =Buffer= you will render the entire file, while if you use =Subtree= you will render only the sub-bullets under neath of all other bullets under your given cursor.
 
@@ -153,15 +195,23 @@ return i
 #+RESULTS:
 : 9
 
+
+
 #+BEGIN_SRC python
   avar = 42
   return avar
 #+END_SRC
 
-#+RESULTS:
-: 42
+***
+**  Analyze Your time with Org Mode - Org Mode Clocktables - Strighfoward
 
+| idx | command          | description                             | Note                                      |
+|-----+------------------+-----------------------------------------+-------------------------------------------|
+|   1 | org-clock-in     | to start the clock in org mode          |                                           |
+|   2 | org-clock-out    | to stop the clock                       |                                           |
+|   3 | org-clock-report | to show the clock report for given task | Assume you already did the `in` and `out` |
 
+[[https://www.youtube.com/watch?v=o6rE18Mxu9U&t=103s&ab_channel=JakeB][Analyze Your Time with Org Mode - Org Mode Clocktables - Strightforward Emacs]]
 
 ** References
 

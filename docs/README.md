@@ -8,7 +8,7 @@ Emacs List of important requsted features
 - [x] dap config for emacs (JavaScript, Swift, lua, R ..etc.)
 - [x] lisp langauge and lisp plugins dev.
 - [x] magit
-- [ ] latex
+- [x] latex
 - [x] yasnippets!
 
 ## Projects to be considered
@@ -36,3 +36,14 @@ The followign ideas that I wish to impelement in my current workflow
 | --------------- | --------------------------------------------------------- | ------------------------------------------------ |
 | `<leader> q r`  | `(spacemacs/restart-emacs-resume-layouts &optional ARGS)` | Function to restart Emacs                        |
 | `<leader>f e R` | `(dotspacemacs/sync-configuration-layers &optional ARG)`  | Reload configurations without restrat your emacs |
+
+
+
+
+
+
+
+
+
+
+

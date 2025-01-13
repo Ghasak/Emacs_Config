@@ -12,8 +12,7 @@
   - [Keybinding Tips](#keybinding-tips)
   - [How to use the LSP](#how-to-use-the-lsp)
   - [Pacakges to be installed](#pacakges-to-be-installed)
-  - [Types of shells in Emacs](#types-of-shells-in-emacs)
-  - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
+  - [Types of shells in Emacs](#types-of-shells-in-emacs) - [How to change the color of specific element in Emacs](#how-to-change-the-color-of-specific-element-in-emacs)
   - [Language servers and layers](#language-servers-and-layers)
   - [Selected themes](#selected-themes)
   - [Fonts Configurations](#fonts-configurations)
@@ -46,6 +45,15 @@ configurations. Now, everything works flawlessly.
    option `Ctrl_jk` to navigate into your register and find all your stored
    instances.
 4. There is also `evil-repeat-pop` which you can read more about it as well.
+
+
+## 3. Insert a date-time in any buffer 
+
+```elsp
+(insert (format-time-string "%Y-%m-%d %H:%M:%S"))
+```
+- Then use `M-:` (Metakey + colon) to bring `eval-expression`.
+  - Highlight the region in visual mode and then use the `eval-expression`.
 
 ## Quick way to navigate between buffers
 
