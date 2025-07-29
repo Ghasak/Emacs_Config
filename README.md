@@ -55,7 +55,6 @@ emacs -q --load ~/.spacemancs
 
 ```sh
 package-refresh-contents
-
 ```
 
 ```sh

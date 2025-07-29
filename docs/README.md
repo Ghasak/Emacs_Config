@@ -36,14 +36,3 @@ The followign ideas that I wish to impelement in my current workflow
 | --------------- | --------------------------------------------------------- | ------------------------------------------------ |
 | `<leader> q r`  | `(spacemacs/restart-emacs-resume-layouts &optional ARGS)` | Function to restart Emacs                        |
 | `<leader>f e R` | `(dotspacemacs/sync-configuration-layers &optional ARG)`  | Reload configurations without restrat your emacs |
-
-
-
-
-
-
-
-
-
-
-
